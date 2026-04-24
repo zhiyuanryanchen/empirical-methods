@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>经济与商务实证研究方法</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "没有结果",
+    "search-matching-documents-text": "匹配的文档",
+    "search-copy-link-title": "复制搜索链接",
+    "search-hide-matches-text": "隐藏其它匹配结果",
+    "search-more-match-text": "更多匹配结果",
+    "search-more-matches-text": "更多匹配结果",
+    "search-clear-button-title": "清除",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "提交",
+    "search-label": "搜索"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="lecture-notes.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">经济与商务实证研究方法</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="搜索"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="展开或折叠导航栏" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">首页</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./syllabus.html"> 
+<span class="menu-text">课程大纲</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">讲义</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="./2026Spring/LectureNotes/W1_AI_Era_Empirical_Research.html">
+ <span class="dropdown-text">第1周：AI时代的实证研究</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./2026Spring/LectureNotes/W1_AI_Era_Empirical_Research_notes.html">
+ <span class="dropdown-text">第1周：详细讲义</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./2026Spring/LectureNotes/W2_Computational_Foundations.html">
+ <span class="dropdown-text">第2周：计算基础与工作流</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./2026Spring/LectureNotes/W2_Computational_Foundations_notes.html">
+ <span class="dropdown-text">第2周：详细讲义</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./2026Spring/LectureNotes/W3_Panel_and_Classical_DID.html">
+ <span class="dropdown-text">第3周：面板数据与经典 DiD</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./2026Spring/LectureNotes/W3_Panel_and_Classical_DID_notes.html">
+ <span class="dropdown-text">第3周：详细讲义</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./2026Spring/LectureNotes/W4_Modern_DID_and_Synthetic_Control.html">
+ <span class="dropdown-text">第4周：现代 DiD 与合成控制</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./2026Spring/LectureNotes/W4_Modern_DID_and_Synthetic_Control_notes.html">
+ <span class="dropdown-text">第4周：详细讲义</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html"> 
+<span class="menu-text">资源</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">经济与商务实证研究方法</h1>
+<p class="subtitle lead">Empirical Methods in Economics and Management Studies</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="home-hero">
+<div class="home-kicker">
+<p>2026 春季学期 | 中国人民大学商学院研究生课程</p>
+</div>
+<p>本课程围绕简约形式因果推断、因果机器学习、结构估计、LLM 文本分析与 AI 研究自动化五条主线展开，目标不是让学生“更快地写代码”，而是帮助学生在 AI 时代更稳健地提出研究问题、验证识别策略并组织可复现的研究流程。</p>
+<div class="hero-actions">
+<p><a href="./2026Spring/LectureNotes/W4_Modern_DID_and_Synthetic_Control.html" class="hero-button">进入第 4 周讲义</a> <a href="./syllabus.html" class="hero-button hero-button-secondary">查看课程大纲</a></p>
+</div>
+</div>
+<section id="快速入口" class="level2">
+<h2 class="anchored" data-anchor-id="快速入口">快速入口</h2>
+<div class="card-grid">
+<section id="本周讲义" class="level3 course-card action-card">
+<h3 class="anchored" data-anchor-id="本周讲义">本周讲义</h3>
+<p>第 4 周聚焦现代 DiD、交错处理与合成控制，是本学期方法链条的关键节点。</p>
+<p><a href="./2026Spring/LectureNotes/W4_Modern_DID_and_Synthetic_Control.html">查看幻灯</a></p>
+<p><a href="./2026Spring/LectureNotes/W4_Modern_DID_and_Synthetic_Control_notes.html">查看详稿</a></p>
+</section>
+<section id="课程大纲" class="level3 course-card action-card">
+<h3 class="anchored" data-anchor-id="课程大纲">课程大纲</h3>
+<p>查看课程目标、AI 使用规范、成绩构成、9 周安排与各周材料发布状态。</p>
+<p><a href="./syllabus.html">进入课程大纲</a></p>
+</section>
+<section id="课程资源" class="level3 course-card action-card">
+<h3 class="anchored" data-anchor-id="课程资源">课程资源</h3>
+<p>集中查看环境配置、核心阅读、研究工具与本地文献库入口。</p>
+<p><a href="./resources.html">进入资源页</a></p>
+</section>
+<section id="环境配置" class="level3 course-card action-card">
+<h3 class="anchored" data-anchor-id="环境配置">环境配置</h3>
+<p>第一次进入课程，建议先完成 VS Code、Python、Quarto 与 Stata/R 的基本配置。</p>
+<p><a href="./resources.html#安装与配置">查看安装与配置</a></p>
+</section>
+</div>
+</section>
+<section id="本周安排" class="level2">
+<h2 class="anchored" data-anchor-id="本周安排">本周安排</h2>
+<div class="status-panel">
+<div class="status-meta">
+<p><span class="status-badge badge-new"><code>已发布</code></span> 当前建议优先完成</p>
+</div>
+<section id="第-4-周现代-did-与合成控制" class="level3">
+<h3 class="anchored" data-anchor-id="第-4-周现代-did-与合成控制">第 4 周：现代 DiD 与合成控制</h3>
+<ul>
+<li>核心主题：动态处理效应、Goodman-Bacon 分解、Callaway-Sant’Anna、Sun-Abraham、synthetic control</li>
+<li>幻灯： <a href="./2026Spring/LectureNotes/W4_Modern_DID_and_Synthetic_Control.html">第 4 周讲义</a></li>
+<li>详稿： <a href="./2026Spring/LectureNotes/W4_Modern_DID_and_Synthetic_Control_notes.html">第 4 周详细讲义</a></li>
+<li>配套实验： <a href="https://zhiyuanryanchen.github.io/emprical-methods/2026Spring/Labs/L4-Diff-in-Diffs-More.ipynb" download="">L4 交错 DiD Monte Carlo.ipynb</a></li>
+<li>后续安排：第 5 至第 9 周材料将按授课进度陆续发布</li>
+</ul>
+</section>
+</div>
+</section>
+<section id="课程概览" class="level2">
+<h2 class="anchored" data-anchor-id="课程概览">课程概览</h2>
+<div class="card-grid pillar-grid">
+<section id="简约形式因果推断" class="level3 course-card">
+<h3 class="anchored" data-anchor-id="简约形式因果推断">简约形式因果推断</h3>
+<p>双重差分法、断点回归、工具变量、合成控制法与识别诊断。</p>
+</section>
+<section id="因果机器学习" class="level3 course-card">
+<h3 class="anchored" data-anchor-id="因果机器学习">因果机器学习</h3>
+<p>双重 / 去偏 ML、因果森林、异质性处理效应与模型验证。</p>
+</section>
+<section id="结构估计" class="level3 course-card">
+<h3 class="anchored" data-anchor-id="结构估计">结构估计</h3>
+<p>需求估计、引力模型、机制分析与反事实政策模拟。</p>
+</section>
+<section id="llm-文本分析" class="level3 course-card">
+<h3 class="anchored" data-anchor-id="llm-文本分析">LLM 文本分析</h3>
+<p>提示标注、效度检验、测量误差诊断与下游经验研究应用。</p>
+</section>
+<section id="ai-研究自动化" class="level3 course-card">
+<h3 class="anchored" data-anchor-id="ai-研究自动化">AI 研究自动化</h3>
+<p>审计轨迹、复现治理、智能编码与研究流程自动化。</p>
+</section>
+</div>
+</section>
+<section id="课程动态" class="level2">
+<h2 class="anchored" data-anchor-id="课程动态">课程动态</h2>
+<div class="update-list">
+<div class="update-card">
+<p><span class="status-badge badge-new"><code>新发布</code></span> <code>2026-04-25</code></p>
+<section id="第-2-周材料已发布" class="level3">
+<h3 class="anchored" data-anchor-id="第-2-周材料已发布">第 2 周材料已发布</h3>
+<p>第 2 周《计算基础与工作流》课件与详细讲义现已上线，适合第一次搭建课程工作环境的同学优先使用。</p>
+<p><a href="./2026Spring/LectureNotes/W2_Computational_Foundations.html">查看第 2 周课件</a></p>
+<p><a href="./2026Spring/LectureNotes/W2_Computational_Foundations_notes.html">查看第 2 周详细讲义</a></p>
+</section>
+</div>
+<div class="update-card">
+<p><span class="status-badge badge-updated"><code>更新</code></span> <code>2026-04-19</code></p>
+<section id="课程结构调整为-9-周" class="level3">
+<h3 class="anchored" data-anchor-id="课程结构调整为-9-周">课程结构调整为 9 周</h3>
+<p>原先并列的 DiD 内容拆分为“经典 DiD”和“现代 DiD 与合成控制”两周，便于将识别逻辑、估计量差异与实操练习分开消化。</p>
+<p><a href="./2026Spring/LectureNotes/W3_Panel_and_Classical_DID.html">查看第 3 周讲义</a></p>
+<p><a href="./2026Spring/LectureNotes/W4_Modern_DID_and_Synthetic_Control.html">查看第 4 周讲义</a></p>
+</section>
+</div>
+<div class="update-card">
+<p><span class="status-badge badge-new"><code>新发布</code></span> <code>2026-04-18</code></p>
+<section id="第-1-周材料已发布" class="level3">
+<h3 class="anchored" data-anchor-id="第-1-周材料已发布">第 1 周材料已发布</h3>
+<p>第 1 周聚焦研究设计、因果推断与 AI 时代的实证研究边界，可作为整个学期的方法总入口。</p>
+<p><a href="./2026Spring/LectureNotes/W1_AI_Era_Empirical_Research.html">查看第 1 周课件</a></p>
+<p><a href="./2026Spring/LectureNotes/W1_AI_Era_Empirical_Research_notes.html">查看第 1 周详细讲义</a></p>
+</section>
+</div>
+</div>
+</section>
+<section id="第一次访问建议" class="level2">
+<h2 class="anchored" data-anchor-id="第一次访问建议">第一次访问建议</h2>
+<div class="card-grid">
+<section id="第-1-步完成安装与配置" class="level3 course-card">
+<h3 class="anchored" data-anchor-id="第-1-步完成安装与配置">第 1 步：完成安装与配置</h3>
+<p>先安装 VS Code、Python 插件、Quarto，并确认自己已准备好 Stata 或 R。</p>
+</section>
+<section id="第-2-步通读课程大纲" class="level3 course-card">
+<h3 class="anchored" data-anchor-id="第-2-步通读课程大纲">第 2 步：通读课程大纲</h3>
+<p>重点关注成绩构成、AI 使用规范与 9 周材料发布状态，避免把“课程承诺”和“已发布资源”混为一谈。</p>
+</section>
+<section id="第-3-步打开当前讲义" class="level3 course-card">
+<h3 class="anchored" data-anchor-id="第-3-步打开当前讲义">第 3 步：打开当前讲义</h3>
+<p>按“当前已发布材料”顺序学习，并优先完成对应实验室练习。</p>
+</section>
+</div>
+</section>
+<section id="课程联系与安排" class="level2">
+<h2 class="anchored" data-anchor-id="课程联系与安排">课程联系与安排</h2>
+<div class="info-panel">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">项目</th>
+<th style="text-align: left;">信息</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">教师</td>
+<td style="text-align: left;">陈志远</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">邮箱</td>
+<td style="text-align: left;"><a href="mailto:chenzhiyuan@rmbs.ruc.edu.cn">chenzhiyuan@rmbs.ruc.edu.cn</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">办公地点</td>
+<td style="text-align: left;">商学楼316（通州校区）</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">上课时间</td>
+<td style="text-align: left;">周五 14:00-17:30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">上课地点</td>
+<td style="text-align: left;">商学楼103（通州校区）</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">答疑</td>
+<td style="text-align: left;">预约制</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "已复制");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "已复制");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/zhiyuanryanchen\.github\.io\/emprical-methods");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="zh-Hans"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-a06763021a52c43c40a351ac8b799b8f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
+
+  <meta name="author" content="陈志远">
+  <meta name="dcterms.date" content="2026-05-23">
+  <title>经济与商务实证研究方法</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-6ad8cc1c24fdf89b72a6f71f814a247b.css">
+  <link rel="stylesheet" href="../../ruc-theme.scss">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">经济与商务实证研究方法</h1>
+  <p class="subtitle">第 4 周：DiD 方法的前沿拓展——匹配、合成、交错与实战</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+陈志远 
+</div>
+        <p class="quarto-title-affiliation">
+            中国人民大学商学院
+          </p>
+    </div>
+</div>
+
+  <p class="date">2026-05-23</p>
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">目录</h2>
+<ul>
+<li><a href="#/一倾向得分匹配-did" id="/toc-一倾向得分匹配-did">一、倾向得分匹配 DiD</a></li>
+<li><a href="#/二半参数-did" id="/toc-二半参数-did">二、半参数 DiD</a></li>
+<li><a href="#/三合成双重差分" id="/toc-三合成双重差分">三、合成双重差分</a></li>
+<li><a href="#/四交错处理下的-twfe-陷阱" id="/toc-四交错处理下的-twfe-陷阱">四、交错处理下的 TWFE 陷阱</a></li>
+<li><a href="#/五现代-did-估计量" id="/toc-五现代-did-估计量">五、现代 DiD 估计量</a></li>
+<li><a href="#/六历史重要imai-kim-wang-ajps-2021" id="/toc-六历史重要imai-kim-wang-ajps-2021">六、历史重要：Imai-Kim-Wang (AJPS 2021)</a></li>
+<li><a href="#/七实务指南" id="/toc-七实务指南">七、实务指南</a></li>
+<li><a href="#/本讲要点" id="/toc-本讲要点">本讲要点</a></li>
+<li><a href="#/参考文献" id="/toc-参考文献">参考文献</a></li>
+</ul>
+</nav>
+</section>
+<section id="上节课回顾" class="slide level2">
+<h2>上节课回顾</h2>
+<div class="concept-box">
+<p><strong>核心要点</strong></p>
+<ul>
+<li><em>面板数据 + 固定效应</em>：消灭时不变异质性</li>
+<li><em>经典 2×2 DiD</em>：TWFE 在“两组两期”下与 DiD 等价</li>
+<li><em>平行趋势</em>不可直接检验；预趋势只是必要条件</li>
+<li><em>聚类标准误</em>：BDM(2004) 的 45% 过度拒绝警钟</li>
+</ul>
+</div>
+<div class="fragment">
+<p><em>本节课目标</em></p>
+<ul>
+<li>把 DiD 从“2×2”扩展到更现实的设定：匹配、半参数、合成</li>
+<li>看清<em>交错处理</em>下 TWFE 为何失灵——Goodman-Bacon 分解</li>
+<li>学会 Callaway-Sant’Anna、Sun-Abraham、de Chaisemartin、Borusyak 四大现代估计量</li>
+<li>掌握一份可直接用于论文的<em>DiD 实战清单</em></li>
+</ul>
+</div>
+</section>
+<section id="本讲路线图" class="slide level2">
+<h2>本讲路线图</h2>
+<div class="concept-box">
+<p><strong>六个层层递进的环节</strong></p>
+<ol type="1">
+<li><em>倾向得分匹配 DiD</em>（PSM-DID）——把“可观测特征”拉平</li>
+<li><em>半参数 DiD</em>（Abadie 2005）——权重形式的 ATT</li>
+<li><em>合成 DiD</em>（Arkhangelsky et al.&nbsp;2021）——SCM 与 DiD 的融合</li>
+<li><em>交错处理下的 TWFE 陷阱</em>——Goodman-Bacon 分解</li>
+<li><em>现代估计量</em>——CS、SA、dCdH、BJS 四兄弟</li>
+<li><em>当历史重要</em>——Imai-Kim-Wang 面板匹配</li>
+</ol>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>提示</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>配套实验室</strong></p>
+<p>所有 Stata 代码在 <code>2026Spring/Labs/L4-Diff-in-Diffs-More.ipynb</code> 中可独立运行。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<section id="一倾向得分匹配-did" class="title-slide slide level1 center" data-background-color="#003153">
+<h1>一、倾向得分匹配 DiD</h1>
+
+</section>
+<section id="从潜在结果到选择偏误" class="slide level2">
+<h2>从潜在结果到选择偏误</h2>
+<div class="concept-box">
+<p><strong>潜在结果与 ATT</strong></p>
+<ul>
+<li>每个个体 <span class="math inline">i</span> 有两种潜在结果 <span class="math inline">(Y_i^1, Y_i^0)</span>，但只能观测到 <span class="math inline">Y_i = D_i Y_i^1 + (1 - D_i) Y_i^0</span></li>
+<li>关心的参数是<em>受处理组的平均效应</em>（ATT）</li>
+</ul>
+<p><span class="math display">ATT = E[Y_i^1 - Y_i^0 \mid D_i = 1,\, \boldsymbol{X}_i]</span></p>
+</div>
+<div class="fragment">
+<p><strong>观测差异的分解</strong></p>
+<p><span class="math display">\underbrace{E[Y_i \mid D=1, \boldsymbol{X}] - E[Y_i \mid D=0, \boldsymbol{X}]}_{\text{观测差异}} = \underbrace{ATT \mid \boldsymbol{X}}_{\text{真实效应}} + \underbrace{E[Y_i^0 \mid D=1,\boldsymbol{X}] - E[Y_i^0 \mid D=0, \boldsymbol{X}]}_{\textcolor{red}{\text{选择偏误}}}</span></p>
+<p><em>选择偏误</em>是阻挡“简单比较”识别 ATT 的核心障碍。</p>
+</div>
+</section>
+<section id="条件独立假设cia" class="slide level2">
+<h2>条件独立假设（CIA）</h2>
+<div class="concept-box">
+<p><strong>CIA 假设</strong></p>
+<p><span class="math display">Y_i^0 \perp D_i \mid \boldsymbol{X}_i</span></p>
+<p>在 <span class="math inline">\boldsymbol{X}_i</span> 条件下，处理分配相当于随机；此时 <span class="math inline">Bias(\boldsymbol{X}_i) = 0</span>，ATT 可被识别。</p>
+</div>
+<div class="fragment">
+<div class="warning-box">
+<p><strong>CIA 何时失效</strong></p>
+<ul>
+<li>未观测特征驱动处理选择（<em>能力</em>、<em>偏好</em>、<em>私人信息</em>）</li>
+<li>即使 <span class="math inline">\boldsymbol{X}_i</span> 很丰富，也无法排除选择于<em>不可观测</em>维度</li>
+<li>匹配方法的前提是“混杂都可观测”——这在实证中是一个<em>需要论证的假设</em></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="回归-vs-匹配两种加权" class="slide level2">
+<h2>回归 vs 匹配：两种加权</h2>
+<div class="concept-box">
+<p><strong>Angrist-Pischke 的观察</strong></p>
+<p>“Regression can be motivated as a particular sort of weighted matching estimator.”</p>
+</div>
+<div class="fragment">
+<p><strong>权重差异</strong></p>
+<ul>
+<li><em>匹配</em>：权重集中在 <span class="math inline">\Pr(D=1 \mid \boldsymbol{X})</span> <em>较高</em>的格子——靠近处理组</li>
+<li><em>回归</em>：权重集中在 <span class="math inline">\Pr(D=1 \mid \boldsymbol{X}) \cdot [1 - \Pr(D=1 \mid \boldsymbol{X})]</span> <em>较大</em>的格子——处理/对照“拉锯”最激烈处</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>提示</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>共同支撑（Common Support）要求</strong></p>
+<p><span class="math display">0 &lt; \Pr(D_i = 1 \mid \boldsymbol{X}_i) &lt; 1</span></p>
+<p>若某些 <span class="math inline">\boldsymbol{X}</span> 值下<em>只有</em>处理组（或只有对照组），匹配/回归的权重无法定义。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="倾向得分匹配psm" class="slide level2">
+<h2>倾向得分匹配（PSM）</h2>
+<div class="concept-box">
+<p><strong>Rosenbaum-Rubin (1983) 的降维</strong></p>
+<p>当 <span class="math inline">\boldsymbol{X}</span> 维度高，逐维匹配困难。PSM 把 <span class="math inline">\boldsymbol{X}</span> 压缩为一维<em>倾向得分</em>：</p>
+<p><span class="math display">P(\boldsymbol{Z}_i) = \Pr(D_i = 1 \mid \boldsymbol{Z}_i)</span></p>
+<p>匹配改在 <span class="math inline">P(\boldsymbol{Z}_i)</span> 上进行。</p>
+</div>
+<div class="fragment">
+<p><strong>Heckman-Ichimura-Todd (1998) 的结构解释</strong></p>
+<ul>
+<li>把 <span class="math inline">\boldsymbol{X}</span> 拆成 <span class="math inline">(\boldsymbol{T}, \boldsymbol{Z})</span>：<span class="math inline">\boldsymbol{T}</span> 进入潜在结果方程，<span class="math inline">\boldsymbol{Z}</span> 进入选择方程</li>
+<li>排除限制：<span class="math inline">\Pr(D = 1 \mid \boldsymbol{X}) = \Pr(D = 1 \mid \boldsymbol{Z})</span></li>
+<li><em>足够假设</em>：<span class="math inline">U_i^0 \perp D_i \mid P(\boldsymbol{Z}_i)</span></li>
+</ul>
+</div>
+</section>
+<section id="psm-did把-psm-嫁接到面板" class="slide level2">
+<h2>PSM-DID：把 PSM 嫁接到面板</h2>
+<div class="concept-box">
+<p><strong>PSM-DID 估计量</strong></p>
+<p><span class="math display">\hat{\delta}^{PSM\text{-}DID} = E[Y_{i1} - Y_{i0} \mid \boldsymbol{X}_i, D_{i1} = 1] - E[Y_{i1} - Y_{i0} \mid \boldsymbol{X}_i, D_{i1} = 0]</span></p>
+<p>匹配处理组与对照组在 <span class="math inline">P(\boldsymbol{Z}_i)</span> 上相近的单位，对差分后的结果取平均。</p>
+</div>
+<div class="fragment">
+<p><strong>PSM-DID 优于简单 PSM 之处</strong></p>
+<ul>
+<li>允许<em>选择依赖于潜在结果水平</em>——用面板差分消去个体固定效应</li>
+<li>允许<em>一部分不可观测维度上的选择</em>——只要它们时不变</li>
+</ul>
+</div>
+</section>
+<section id="psm-did-实施步骤" class="slide level2">
+<h2>PSM-DID 实施步骤</h2>
+<div class="concept-box">
+<p><strong>三步走</strong></p>
+<ol type="1">
+<li>用 <code>probit</code> / <code>logit</code> 估计 <span class="math inline">P(\boldsymbol{Z}_i)</span></li>
+<li>按队列-年份在 <span class="math inline">\hat{P}</span> 上做最近邻匹配</li>
+<li>生成差分结果 <span class="math inline">\Delta Y_{it} = Y_{it} - Y_{i0}</span>，按权重聚合到 <span class="math inline">ATT_{gt}</span></li>
+</ol>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>提示</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>推断</strong>：Abadie &amp; Imbens (2006) 的解析标准误；Stata 命令 <code>teffects psmatch</code> 直接支持。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="stata-实战psm-didlab-2" class="slide level2">
+<h2>Stata 实战：PSM-DID（Lab §2）</h2>
+<div style="font-size: 0.9em;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a></a>* ===== DGP：500 个体 × 2 期面板（选入处理依赖 x）=====</span>
+<span id="cb1-2"><a></a><span class="kw">clear</span> <span class="ot">all</span></span>
+<span id="cb1-3"><a></a><span class="kw">set</span> <span class="dv">seed</span> 10101</span>
+<span id="cb1-4"><a></a><span class="kw">set</span> <span class="kw">obs</span> 500</span>
+<span id="cb1-5"><a></a>g id = <span class="dt">_n</span></span>
+<span id="cb1-6"><a></a>g lambda = rnormal(0, 0.5)             <span class="co">// 个体固定效应</span></span>
+<span id="cb1-7"><a></a>expand 2</span>
+<span id="cb1-8"><a></a><span class="kw">bys</span> id: g t = <span class="dt">_n</span> - 1                    <span class="co">// 0/1 两期</span></span>
+<span id="cb1-9"><a></a>g x  = rnormal(0, 1)</span>
+<span id="cb1-10"><a></a>g u1 = rnormal(0, 0.2)</span>
+<span id="cb1-11"><a></a>g u0 = rnormal(0, 0.2)</span>
+<span id="cb1-12"><a></a>g v  = rnormal(0, 1) <span class="kw">if</span> t == 1          <span class="co">// 选择方程噪声</span></span>
+<span id="cb1-13"><a></a><span class="fu">scalar</span> delta  = 0.1                     <span class="co">// 时间趋势</span></span>
+<span id="cb1-14"><a></a><span class="fu">scalar</span> alpha1 = 0.1</span>
+<span id="cb1-15"><a></a><span class="fu">scalar</span> alpha2 = 0.2</span>
+<span id="cb1-16"><a></a>g y0 = alpha1*x + alpha2*x^2 + lambda + delta*t + u0</span>
+<span id="cb1-17"><a></a>g y1 = alpha1*x + alpha2*x^2 + lambda + delta*t + u1</span>
+<span id="cb1-18"><a></a>g D  = 0</span>
+<span id="cb1-19"><a></a><span class="kw">bys</span> id (t): <span class="kw">replace</span> D = 1 <span class="kw">if</span> t == 1 &amp; x &gt; v   <span class="co">// x 大的单位进入处理</span></span>
+<span id="cb1-20"><a></a>g tau_u = <span class="fu">cond</span>(D == 1, 0.15, 0)         <span class="co">// 真实 ATT = 0.15</span></span>
+<span id="cb1-21"><a></a><span class="kw">replace</span> y1 = y1 + tau_u <span class="kw">if</span> D == 1</span>
+<span id="cb1-22"><a></a>g <span class="fu">y</span> = D*y1 + (1 - D)*y0</span>
+<span id="cb1-23"><a></a><span class="kw">save</span> simdata_did1.dta, <span class="kw">replace</span></span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="stata-实战估计倾向得分" class="slide level2">
+<h2>Stata 实战：估计倾向得分</h2>
+<div style="font-size: 0.95em;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a></a>* ===== Step 1：logit / <span class="kw">probit</span> 估计 P(x) =====</span>
+<span id="cb2-2"><a></a><span class="kw">qui</span> <span class="kw">probit</span> D x       <span class="kw">if</span> t == 1</span>
+<span id="cb2-3"><a></a><span class="kw">predict</span> pr1 <span class="kw">if</span> t == 1</span>
+<span id="cb2-4"><a></a></span>
+<span id="cb2-5"><a></a><span class="kw">qui</span> <span class="kw">probit</span> D x x^2   <span class="kw">if</span> t == 1         <span class="co">// 非线性倾向得分</span></span>
+<span id="cb2-6"><a></a><span class="kw">predict</span> pr2 <span class="kw">if</span> t == 1</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><em>重叠假设（Common Support）</em> 的可视化——处理组与对照组倾向得分分布要有足够重叠。</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a></a><span class="kw">twoway</span> (<span class="kw">hist</span> pr1 <span class="kw">if</span> t==1 &amp; D==1, <span class="kw">color</span>(<span class="bn">blue</span>%30)) <span class="co">///</span></span>
+<span id="cb3-2"><a></a>       (<span class="kw">hist</span> pr1 <span class="kw">if</span> t==1 &amp; D==0, <span class="kw">color</span>(<span class="kw">red</span>%30)), <span class="co">///</span></span>
+<span id="cb3-3"><a></a>       <span class="bn">legend</span>(<span class="kw">order</span>(1 <span class="st">"treated"</span> 2 <span class="st">"control"</span>)) <span class="co">///</span></span>
+<span id="cb3-4"><a></a>       <span class="bn">title</span>(<span class="st">"Propensity Score Overlap"</span>)</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="stata-实战psm-did-估计" class="slide level2">
+<h2>Stata 实战：PSM-DID 估计</h2>
+<div style="font-size: 0.95em;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a></a>* ===== Step 2：生成差分结果，Step 3：匹配 =====</span>
+<span id="cb4-2"><a></a><span class="kw">tsset</span> id t</span>
+<span id="cb4-3"><a></a>g dy = <span class="fu">y</span> - <span class="ot">l</span>.<span class="fu">y</span>                          <span class="co">// 差分结果</span></span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a>* 1 近邻 PSM-DID</span>
+<span id="cb4-6"><a></a>teffects psmatch (dy) (D x, <span class="kw">probit</span>) <span class="kw">if</span> t==1, atet nn(1) <span class="kw">vce</span>(<span class="kw">robust</span>)</span>
+<span id="cb4-7"><a></a></span>
+<span id="cb4-8"><a></a>* 2 近邻 PSM-DID</span>
+<span id="cb4-9"><a></a>teffects psmatch (dy) (D x, <span class="kw">probit</span>) <span class="kw">if</span> t==1, atet nn(2) <span class="kw">vce</span>(<span class="kw">robust</span>)</span>
+<span id="cb4-10"><a></a></span>
+<span id="cb4-11"><a></a>* 3 近邻 PSM-DID</span>
+<span id="cb4-12"><a></a>teffects psmatch (dy) (D x, <span class="kw">probit</span>) <span class="kw">if</span> t==1, atet nn(3) <span class="kw">vce</span>(<span class="kw">robust</span>)</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><em>选择近邻数的权衡</em>：近邻越多 → 偏误越小，但<em>方差</em>越大。</p>
+</div>
+</section>
+<section id="近邻数对-att-的影响" class="slide level2">
+<h2>近邻数对 ATT 的影响</h2>
+<div style="font-size: 0.9em;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a></a><span class="fu">matrix</span> Res = <span class="fu">J</span>(10, 3, .)</span>
+<span id="cb5-2"><a></a>forv i = 1/10 {</span>
+<span id="cb5-3"><a></a>    <span class="kw">qui</span> teffects psmatch (dy) (D x, <span class="kw">probit</span>) <span class="kw">if</span> t==1, atet nn(<span class="ot">`i'</span>) <span class="kw">vce</span>(<span class="kw">robust</span>)</span>
+<span id="cb5-4"><a></a>    <span class="fu">matrix</span> Res[<span class="ot">`i'</span>, 1] = (_b[r1vs0.D], _se[r1vs0.D], <span class="ot">`i'</span>)</span>
+<span id="cb5-5"><a></a>}</span>
+<span id="cb5-6"><a></a><span class="kw">drop</span> <span class="dt">_all</span></span>
+<span id="cb5-7"><a></a><span class="kw">set</span> <span class="kw">obs</span> 10</span>
+<span id="cb5-8"><a></a><span class="kw">svmat</span> <span class="kw">double</span> Res, names(c)</span>
+<span id="cb5-9"><a></a><span class="kw">twoway</span> connected c1 c3 || connected c2 c3, <span class="co">///</span></span>
+<span id="cb5-10"><a></a>       <span class="bn">legend</span>(<span class="kw">order</span>(1 <span class="st">"ATT"</span> 2 <span class="st">"SE"</span>)) <span class="bn">xtitle</span>(<span class="st">"# of Neighbors"</span>)</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>提示</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>实操经验</strong></p>
+<ul>
+<li>2–5 个近邻是稳健的默认选择</li>
+<li>若 ATT 对近邻数极度敏感 → 说明重叠有问题，或处理效应异质</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="二半参数-did" class="title-slide slide level1 center" data-background-color="#003153">
+<h1>二、半参数 DiD</h1>
+
+</section>
+<section id="abadie-2005-restud权重表示" class="slide level2">
+<h2>Abadie (2005, ReStud)：权重表示</h2>
+<div class="concept-box">
+<p><strong>条件平行趋势下的 ATT 权重表达</strong></p>
+<p><span class="math display">ATT = E\left[\frac{Y_{i1} - Y_{i0}}{\textcolor{blue}{P(D = 1)}} \cdot \textcolor{red}{\frac{D_{i1} - P(D = 1 \mid \boldsymbol{X})}{1 - P(D = 1 \mid \boldsymbol{X})}}\right]</span></p>
+<p>直观：用<em>倾向得分</em>对差分结果加权重，使得“对照组”被重新标定为处理组的可比反事实。</p>
+</div>
+<div class="fragment">
+<p><strong>为什么重要</strong></p>
+<ul>
+<li>不需要<em>选择</em>任何近邻，权重由数据驱动</li>
+<li>天然适合做<em>子群</em>（subgroup）的 ATT：只要定义 <span class="math inline">\boldsymbol{X}^{sub}</span></li>
+<li>Stata 命令：<code>absdid</code></li>
+</ul>
+</div>
+</section>
+<section id="stata-实战半参数-didlab-3" class="slide level2">
+<h2>Stata 实战：半参数 DiD（Lab §3）</h2>
+<div style="font-size: 0.9em;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb6-1"><a></a>* ===== (1) 手工实现 Abadie (2005) 权重公式 =====</span>
+<span id="cb6-2"><a></a><span class="kw">use</span> simdata_did1.dta, <span class="kw">clear</span></span>
+<span id="cb6-3"><a></a><span class="kw">qui</span> <span class="kw">logit</span> D x <span class="kw">if</span> t == 1</span>
+<span id="cb6-4"><a></a><span class="kw">predict</span> pr1 <span class="kw">if</span> t == 1</span>
+<span id="cb6-5"><a></a><span class="kw">egen</span> pD = <span class="kw">mean</span>(D) <span class="kw">if</span> t == 1</span>
+<span id="cb6-6"><a></a><span class="kw">tsset</span> id t</span>
+<span id="cb6-7"><a></a><span class="kw">gen</span> ab_diff = (<span class="fu">y</span> - <span class="ot">l</span>.<span class="fu">y</span>)/pD * ((D - pr1)/(1 - pr1)) <span class="kw">if</span> t == 1</span>
+<span id="cb6-8"><a></a><span class="kw">qui</span> <span class="kw">sum</span> ab_diff <span class="kw">if</span> t == 1</span>
+<span id="cb6-9"><a></a><span class="kw">display</span> <span class="st">"半参数 ATT = "</span> <span class="fu">r</span>(<span class="kw">mean</span>) <span class="st">", SE = "</span> <span class="fu">r</span>(<span class="fu">sd</span>)</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div style="font-size: 0.9em;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb7-1"><a></a>* ===== (2) 直接调用 absdid 命令 =====</span>
+<span id="cb7-2"><a></a>g dy = <span class="fu">y</span> - <span class="ot">l</span>.<span class="fu">y</span></span>
+<span id="cb7-3"><a></a>absdid dy, tvar(D) xvar(x) sle       <span class="co">// sle 指定 logistic 概率模型</span></span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><em>回顾</em>：真实 ATT = 0.15。若估计值接近 0.15，即说明方法有效。</p>
+</div>
+</section></section>
+<section>
+<section id="三合成双重差分" class="title-slide slide level1 center" data-background-color="#003153">
+<h1>三、合成双重差分</h1>
+
+</section>
+<section id="从合成控制说起" class="slide level2">
+<h2>从合成控制说起</h2>
+<div class="concept-box">
+<p><strong>SCM（Abadie-Diamond-Hainmueller, JASA 2010）</strong></p>
+<p>单一处理单位的反事实用<em>对照池的加权组合</em>构造：</p>
+<p><span class="math display">\hat{Y}_{1t}^{SCM} = \sum_{j=2}^{J+1} \omega_j^* \cdot Y_{jt}, \quad \omega^* \geq 0,\ \sum_j \omega_j^* = 1</span></p>
+<ul>
+<li>权重选法：让合成单位<em>处理前</em>的结果路径与处理单位尽可能接近</li>
+<li>经典案例：加州 Proposition 99 → 用 Utah + Nevada + … 合成出一个“没有控烟的加州”</li>
+</ul>
+</div>
+</section>
+<section id="scm-的短板" class="slide level2">
+<h2>SCM 的短板</h2>
+<div class="warning-box">
+<p><strong>何时 SCM 不够用</strong></p>
+<ul>
+<li><em>处理组有多个单位</em>：权重解释变复杂，推断依赖渐近理论不适用</li>
+<li><em>平行趋势“几乎成立”</em>：不需要扔掉时间维度的结构</li>
+<li><em>对照池很大</em>：纯粹匹配路径可能过拟合</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="concept-box">
+<p><strong>Arkhangelsky et al.&nbsp;(AER 2021) 的融合</strong></p>
+<p><em>合成 DiD</em>（Synthetic DiD, SDiD）= SCM 的单位权重 + DiD 的时期权重 + TWFE 的面板结构</p>
+</div>
+</div>
+</section>
+<section id="sdid-的目标函数" class="slide level2">
+<h2>SDiD 的目标函数</h2>
+<div class="concept-box">
+<p><strong>同时使用单位权重 <span class="math inline">\omega_i^{sc}</span> 与时期权重 <span class="math inline">\lambda_t^{sc}</span></strong></p>
+<p><span class="math display">(\hat{\delta}^{sdid},\, \hat{\mu},\, \hat{\alpha}_i,\, \hat{\beta}_t) = \arg\min \sum_i \sum_t (Y_{it} - \mu - \alpha_i - \beta_t - \delta D_{it})^2 \cdot \textcolor{blue}{\hat{\omega}_i^{sc}} \cdot \textcolor{red}{\hat{\lambda}_t^{sc}}</span></p>
+<p>直觉：</p>
+<ul>
+<li><em>像 SCM</em>：单位权重让处理前的路径对齐 → 弱化对平行趋势的依赖</li>
+<li><em>像 DiD</em>：仍然保留 TWFE 结构 → 允许大面板渐近推断</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>提示</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>实现</strong>：Stata <code>sdid</code>、R <code>synthdid</code>；支持 bootstrap 或 jackknife 推断。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="stata-实战synthetic-didlab-4" class="slide level2">
+<h2>Stata 实战：Synthetic DiD（Lab §4）</h2>
+<div style="font-size: 0.95em;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb8-1"><a></a><span class="kw">use</span> simdata_did1.dta, <span class="kw">clear</span></span>
+<span id="cb8-2"><a></a>g <span class="kw">x2</span> = x^2</span>
+<span id="cb8-3"><a></a></span>
+<span id="cb8-4"><a></a>* 合成 DiD（自带单位 + 时期权重，bootstrap 推断）</span>
+<span id="cb8-5"><a></a>sdid <span class="fu">y</span> id t D, covariates(x <span class="kw">x2</span>, projected) <span class="co">///</span></span>
+<span id="cb8-6"><a></a>    <span class="kw">vce</span>(<span class="kw">bootstrap</span>) <span class="dv">seed</span>(123)</span>
+<span id="cb8-7"><a></a></span>
+<span id="cb8-8"><a></a>* 提取单位权重 omega（只存在于 t==1 且 D==0 的对照单位上）</span>
+<span id="cb8-9"><a></a>g omega = .</span>
+<span id="cb8-10"><a></a><span class="kw">qui</span> <span class="kw">sum</span> D <span class="kw">if</span> t==1 &amp; D==0</span>
+<span id="cb8-11"><a></a><span class="kw">qui</span> forv i = 1/<span class="ot">`r(N)'</span> {</span>
+<span id="cb8-12"><a></a>    <span class="fu">scalar</span> uw     = <span class="fu">e</span>(omega)[<span class="ot">`i'</span>, 1]</span>
+<span id="cb8-13"><a></a>    <span class="fu">scalar</span> ctr_id = <span class="fu">e</span>(omega)[<span class="ot">`i'</span>, 2]</span>
+<span id="cb8-14"><a></a>    <span class="kw">replace</span> omega = uw <span class="kw">if</span> id == ctr_id</span>
+<span id="cb8-15"><a></a>}</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="sdid-的权重诊断" class="slide level2">
+<h2>SDiD 的权重诊断</h2>
+<div class="concept-box">
+<p><strong>为什么要看权重</strong></p>
+<ul>
+<li><em>权重集中</em>：少数几个对照单位承担了全部合成——类似 SCM，反事实的可解释性高</li>
+<li><em>权重分散</em>：更接近 TWFE，平行趋势要求更严</li>
+<li>论文应报告<em>权重分布图</em>：透明度比单一 ATT 估计更重要</li>
+</ul>
+</div>
+<div class="fragment">
+<p><em>权重 × 协变量的投影</em> 可以检查合成样本的代表性：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb9-1"><a></a>g x_proj = x * omega</span>
+<span id="cb9-2"><a></a>ta t, <span class="kw">sum</span>(x_proj)</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section></section>
+<section>
+<section id="四交错处理下的-twfe-陷阱" class="title-slide slide level1 center" data-background-color="#003153">
+<h1>四、交错处理下的 TWFE 陷阱</h1>
+
+</section>
+<section id="交错处理是常态" class="slide level2">
+<h2>交错处理是常态</h2>
+<div class="concept-box">
+<p><strong>分批推进的政策</strong></p>
+<p>现实中很少“一刀切”，绝大多数政策是<em>分批实施</em>：</p>
+<ul>
+<li>中国自贸区：2013（上海）→ 2015（闽粤津）→ 2017 / 2018 / 2019 / 2020</li>
+<li>美国无过错离婚法：37 个州在 1969-1985 年陆续通过</li>
+<li>企业数字化：内生选择，时点完全异质</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="warning-box">
+<p><strong>TWFE 的直觉“扩展”</strong></p>
+<p><span class="math display">Y_{it} = \alpha_i + \lambda_t + \delta D_{it} + \varepsilon_{it}</span></p>
+<p>看起来与 2×2 一样；但在交错处理下，<span class="math inline">\hat{\delta}</span> 的含义已经<em>面目全非</em>。</p>
+</div>
+</div>
+</section>
+<section id="goodman-bacon-joe-2021-分解" class="slide level2">
+<h2>Goodman-Bacon (JoE 2021) 分解</h2>
+<div class="concept-box">
+<p><strong>Bacon 分解定理</strong></p>
+<p>交错处理下，TWFE 系数等于<em>所有可能的 2×2 DiD 估计量</em>的加权平均：</p>
+<p><span class="math display">\hat{\delta}^{TWFE} = \sum_{j \neq U} \underbrace{s_{jU} \hat{\beta}_{jU}^{2\times 2}}_{\text{处理 vs 从未}} + \sum_{k &lt; \ell} s_{k\ell} \left[\mu_{k\ell} \underbrace{\hat{\beta}_{k\ell}^{2\times 2, k}}_{\text{早 vs 晚}} + (1 - \mu_{k\ell}) \underbrace{\hat{\beta}_{k\ell}^{2\times 2, \ell}}_{\textcolor{red}{\text{晚 vs 早（已处理）}}}\right]</span></p>
+<ul>
+<li>对 <span class="math inline">K</span> 个处理时点组 → 共 <span class="math inline">K^2</span> 个 2×2 DiD</li>
+<li>权重之和为 1，但<em>可能为负</em></li>
+</ul>
+</div>
+</section>
+<section id="三组三期的几何直觉" class="slide level2">
+<h2>三组三期的几何直觉</h2>
+
+<img data-src="figures/W4/DD_3by3.png" class="quarto-figure quarto-figure-center r-stretch"><p><em>从未处理组 <span class="math inline">U</span></em>、<em>早处理组 <span class="math inline">k</span></em>、<em>晚处理组 <span class="math inline">\ell</span></em>——TWFE 把它们两两组合做 2×2 DiD 再加权。</p>
+</section>
+<section id="所有四种-22-did-组合" class="slide level2">
+<h2>所有四种 2×2 DiD 组合</h2>
+
+<img data-src="figures/W4/stagger_all_DD_comparisons.png" class="quarto-figure quarto-figure-center r-stretch"><div class="warning-box">
+<p><strong>问题的关键</strong></p>
+<p>在“晚 vs 早”比较中，<em>早处理组此时已处于处理后</em>——其效应累积被错误地归为“控制组的趋势变化”。</p>
+</div>
+</section>
+<section id="bacon-权重公式" class="slide level2">
+<h2>Bacon 权重公式</h2>
+<div class="concept-box">
+<p><strong>权重的两个来源</strong></p>
+<p><span class="math display">s_{jU} = \frac{(n_j + n_U)^2 \hat{V}_{jU}^D}{\hat{V}^D},\ s_{k\ell}^k = \frac{[(n_k + n_\ell)(1 - \bar{D}_\ell)]^2 \hat{V}_{k\ell}^{D,k}}{\hat{V}^D},\ s_{k\ell}^\ell = \frac{[(n_k + n_\ell) \bar{D}_k]^2 \hat{V}_{k\ell}^{D,\ell}}{\hat{V}^D}</span></p>
+<ul>
+<li><em>组规模平方</em>：样本大的比较权重大</li>
+<li><em>处理方差</em>：两组规模相近 + 处理点接近样本中部 → 方差大 → 权重大</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>提示</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>直觉</strong></p>
+<p>TWFE 并不“公平地”加权所有处理效应。它<em>放大</em>规模相当、时点居中的比较；<em>缩小</em>边缘样本。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="vwatt-vwct-δatt-分解" class="slide level2">
+<h2>VWATT-VWCT-ΔATT 分解</h2>
+<div class="concept-box">
+<p><strong>Goodman-Bacon 的因果解释</strong></p>
+<p><span class="math display">\hat{\delta}^{TWFE} = \underbrace{VWATT}_{\text{方差加权 ATT}} - \underbrace{VWCT}_{\text{方差加权共同趋势}} + \underbrace{\Delta ATT}_{\textcolor{red}{\text{偏误项}}}</span></p>
+<ul>
+<li><span class="math inline">VWCT = 0</span> 若<em>平行趋势</em>成立</li>
+<li><span class="math inline">\Delta ATT \neq 0</span> 若<em>处理效应随时间变化</em>（效应累积、学习效应、政策加码）</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="warning-box">
+<p><strong>负权重的出现</strong></p>
+<p><span class="math display">\Delta ATT = \sum_{k \neq U} \sum_{\ell &gt; k} \sigma_{k\ell} \cdot [ATT_k^{post(\ell)} - ATT_k^{mid(k,\ell)}]</span></p>
+<p>早处理组在晚处理组的“post”期继续累积效应时，它作为对照反而拉低了对“新处理”的估计——<em>估计量可能给出错误符号</em>。</p>
+</div>
+</div>
+</section>
+<section id="经典案例无过错离婚法" class="slide level2">
+<h2>经典案例：无过错离婚法</h2>
+<div class="example-box">
+<p><strong>Stevenson &amp; Wolfers (2006)</strong></p>
+<ul>
+<li><em>政策</em>：无过错（unilateral）离婚法允许任一配偶结束婚姻，改变财产与议价权</li>
+<li><em>数据</em>：37 个美国州在 1969-1985 年分批通过</li>
+<li><em>结果变量</em>：女性自杀率</li>
+<li>Bacon (2021) 用 <code>bacondecomp</code> 重新审视 → 发现 TWFE 的权重结构严重扭曲了估计</li>
+</ul>
+</div>
+</section>
+<section id="离婚法案例事件研究与分解" class="slide level2">
+<h2>离婚法案例：事件研究与分解</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/W4/divorce_law_es.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<p><em>事件研究估计</em>：post 期的平均效应 ≈ -4.92</p>
+<p><em>TWFE 系数</em>（未分解）：-3.08</p>
+<p><strong>差距从何而来？</strong> 正是 Bacon 分解揭示的<em>已处理对照组</em>偏误。</p>
+</div></div>
+</section>
+<section id="bacon-分解权重汇总" class="slide level2">
+<h2>Bacon 分解：权重汇总</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/W4/bacon_decomposition_divorce.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<p><em>时点比较权重</em>（问题区）</p>
+<p><span class="math display">s_{k\ell}^k + s_{k\ell}^\ell = 0.26 + 0.11 = 0.37</span></p>
+<p><em>处理-从未对照权重</em></p>
+<p><span class="math display">s_{jU} = 0.38 + 0.24 = 0.62</span></p>
+<p><strong>清理后</strong></p>
+<ul>
+<li>排除“晚 vs 早”：ATT = -5.45</li>
+<li>再排除“始终处理 vs 新处理”：ATT = -3.71</li>
+</ul>
+</div></div>
+</section>
+<section id="stata-实战bacon-分解lab-5" class="slide level2">
+<h2>Stata 实战：Bacon 分解（Lab §5）</h2>
+<div style="font-size: 0.95em;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb10-1"><a></a>* ===== 交错处理 DGP（Borusyak et al. 2021 模板）=====</span>
+<span id="cb10-2"><a></a><span class="kw">clear</span> <span class="ot">all</span></span>
+<span id="cb10-3"><a></a><span class="kw">set</span> <span class="dv">seed</span> 10</span>
+<span id="cb10-4"><a></a><span class="kw">global</span> T = 15</span>
+<span id="cb10-5"><a></a><span class="kw">global</span> <span class="fu">I</span> = 500</span>
+<span id="cb10-6"><a></a><span class="kw">set</span> <span class="kw">obs</span> <span class="ot">`=$I * $T'</span></span>
+<span id="cb10-7"><a></a><span class="kw">gen</span> i  = <span class="kw">int</span>((<span class="dt">_n</span> - 1)/<span class="ot">$T</span>) + 1</span>
+<span id="cb10-8"><a></a><span class="kw">gen</span> t  = <span class="fu">mod</span>((<span class="dt">_n</span> - 1), <span class="ot">$T</span>) + 1</span>
+<span id="cb10-9"><a></a><span class="kw">tsset</span> i t</span>
+<span id="cb10-10"><a></a><span class="kw">gen</span> Ei = <span class="fu">ceil</span>(runiform() * 7) + <span class="ot">$T</span> - 6 <span class="kw">if</span> t == 1   <span class="co">// 首次处理年份 10..16</span></span>
+<span id="cb10-11"><a></a><span class="kw">bys</span> i (t): <span class="kw">replace</span> Ei = Ei[1]</span>
+<span id="cb10-12"><a></a><span class="kw">gen</span> K  = t - Ei                                    <span class="co">// 相对处理期</span></span>
+<span id="cb10-13"><a></a><span class="kw">gen</span> D  = K &gt;= 0 &amp; Ei != .</span>
+<span id="cb10-14"><a></a><span class="kw">gen</span> tau = <span class="fu">cond</span>(D == 1, (t - 12.5), 0)             <span class="co">// 动态效应</span></span>
+<span id="cb10-15"><a></a><span class="kw">gen</span> Y   = i + 3*t + tau*D + rnormal()</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div style="font-size: 0.95em;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb11-1"><a></a><span class="kw">qui</span> <span class="kw">xtreg</span> Y D i.t, <span class="kw">fe</span> <span class="kw">robust</span></span>
+<span id="cb11-2"><a></a><span class="kw">ssc</span> install bacondecomp, <span class="kw">replace</span></span>
+<span id="cb11-3"><a></a>bacondecomp Y D, ddetail</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section></section>
+<section>
+<section id="五现代-did-估计量" class="title-slide slide level1 center" data-background-color="#003153">
+<h1>五、现代 DiD 估计量</h1>
+
+</section>
+<section id="共同原则避免已处理组做对照" class="slide level2">
+<h2>共同原则：避免“已处理组做对照”</h2>
+<div class="concept-box">
+<p><strong>四个现代方法的修复路径</strong></p>
+<ol type="1">
+<li><em>按组群-时期分别估计</em> <span class="math inline">ATT(g, t)</span></li>
+<li><em>对照组限定在“从未处理”或“尚未处理”</em> 的单位</li>
+<li><em>按研究问题灵活聚合</em>——总体 ATT / 事件时间 ATT / 组群 ATT</li>
+</ol>
+</div>
+<div class="fragment">
+<p><em>下面依次介绍四种主流方法：Wooldridge Mundlak、Sun-Abraham、Callaway-Sant’Anna、de Chaisemartin-D’Haultfoeuille、Borusyak-Jaravel-Spiess</em>。</p>
+</div>
+</section>
+<section id="wooldridge-2021-mundlak-估计量" class="slide level2">
+<h2>Wooldridge (2021) Mundlak 估计量</h2>
+<div class="concept-box">
+<p><strong>核心思想</strong></p>
+<p>“<em>There is nothing inherently wrong with TWFE; the problem is that it imposes strong restrictions on effect heterogeneity.</em>”</p>
+<p>解决办法：把<em>组群-时期虚拟交互项</em>全部放入回归：</p>
+<p><span class="math display">E(Y_{it} \mid \boldsymbol{G}) = \eta + \sum_{g=2}^T \lambda_g G_{ig} + \sum_{s=2}^T \theta_s \mathbf{1}(t = s) + \sum_{g=2}^T \sum_{s = g}^T \tau_{g,s} (G_{ig} \cdot \mathbf{1}(t = s))</span></p>
+</div>
+<div class="fragment">
+<p><strong>识别假设</strong></p>
+<ul>
+<li><em>无预期</em>：<span class="math inline">E[Y_t(g) - Y_t(\infty) \mid \boldsymbol{G}] = 0,\ t &lt; g</span></li>
+<li><em>平行趋势</em>：<span class="math inline">E[Y_t(\infty) - Y_1(\infty) \mid \boldsymbol{G}] = E[Y_t(\infty) - Y_1(\infty)]</span></li>
+</ul>
+</div>
+</section>
+<section id="sun-abraham-joe-2021" class="slide level2">
+<h2>Sun &amp; Abraham (JoE 2021)</h2>
+<div class="concept-box">
+<p><strong>交互加权估计量</strong>（Interaction-Weighted, IW）</p>
+<p><span class="math display">Y_{it} = \sum_{g} \sum_{e \neq 0} \delta_{g,e} \cdot G_{ig} \cdot \mathbf{1}(t - g + 1 = e) + \lambda_i + \lambda_t + \varepsilon_{it}</span></p>
+<ul>
+<li><span class="math inline">\hat{\delta}_{g, e}</span> 一致估计 <span class="math inline">ATT(g, g + e - 1)</span></li>
+<li>报告的事件研究系数：<span class="math inline">\hat{\theta}(e) = \sum_g \hat{w}_g \hat{\delta}_{g, e+1}</span></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Stata 实现：<code>eventstudyinteract</code></strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb12-1"><a></a><span class="kw">sum</span> Ei</span>
+<span id="cb12-2"><a></a><span class="kw">gen</span> lastcohort = (Ei == <span class="fu">r</span>(<span class="fu">max</span>))</span>
+<span id="cb12-3"><a></a>forv <span class="ot">l</span> = 0/5 { <span class="kw">gen</span> L<span class="ot">`l'</span>event = (K == <span class="ot">`l'</span>) }</span>
+<span id="cb12-4"><a></a>forv <span class="ot">l</span> = 1/14 { <span class="kw">gen</span> F<span class="ot">`l'</span>event = (K == -<span class="ot">`l'</span>) }</span>
+<span id="cb12-5"><a></a><span class="kw">drop</span> F1event    <span class="co">// 基准期 k = -1 设为 0</span></span>
+<span id="cb12-6"><a></a></span>
+<span id="cb12-7"><a></a>eventstudyinteract Y L*event <span class="fu">F</span>*event, <span class="co">///</span></span>
+<span id="cb12-8"><a></a>    <span class="kw">vce</span>(<span class="kw">cluster</span> i) absorb(i t) cohort(Ei) control_cohort(lastcohort)</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="callaway-santanna-joe-2021" class="slide level2">
+<h2>Callaway &amp; Sant’Anna (JoE 2021)</h2>
+<div class="concept-box">
+<p><strong>组群-时期 ATT</strong></p>
+<p><span class="math display">ATT(g, t) = E[Y_t(g) - Y_t(\infty) \mid G_g = 1]</span></p>
+<p><em>对照组两种选择</em></p>
+<ul>
+<li>“从未处理”（never-treated）：<span class="math inline">C_i = 1</span></li>
+<li>“尚未处理”（not-yet-treated）：<span class="math inline">D_t = 0</span> 且 <span class="math inline">G_g = 0</span></li>
+</ul>
+<p>对应的估计量：</p>
+<p><span class="math display">\widehat{ATT}^{ny}(g, t) = \frac{\sum_i G_{ig}(Y_{it} - Y_{i,g-1})}{\sum_i G_{ig}} - \frac{\sum_i C_i(1 - G_{ig})(Y_{it} - Y_{i,g-1})}{\sum_i C_i(1 - G_{ig})}</span></p>
+</div>
+<div class="fragment">
+<p><strong>Stata 实现：<code>csdid</code></strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb13-1"><a></a><span class="kw">gen</span> gvar = <span class="fu">cond</span>(Ei == ., 0, Ei)</span>
+<span id="cb13-2"><a></a>csdid Y, ivar(i) time(t) gvar(gvar) notyet</span>
+<span id="cb13-3"><a></a><span class="kw">estat</span> event, estore(<span class="kw">cs</span>)</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="de-chaisemartin-dhaultfoeuille-aer-2020" class="slide level2">
+<h2>de Chaisemartin &amp; D’Haultfoeuille (AER 2020)</h2>
+<div class="concept-box">
+<p><strong>瞬时处理效应</strong></p>
+<p><span class="math display">\hat{\delta}^{dCdH} = \sum_{g=2}^T \hat{P}(G_g = 1 \mid \text{Treated})\cdot \widehat{ATT}(g, g)</span></p>
+<p>只估计<em>刚被处理</em>那一瞬间的效应，按组群规模加权。</p>
+</div>
+<div class="fragment">
+<p><strong>Stata 实现：<code>did_multiplegt</code></strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb14-1"><a></a>did_multiplegt Y i t D, robust_dynamic dynamic(5) <span class="co">///</span></span>
+<span id="cb14-2"><a></a>    placebo(5) breps(100) <span class="kw">cluster</span>(i)</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>dynamic(5)</code>：5 期动态效应</li>
+<li><code>placebo(5)</code>：5 期预趋势安慰剂</li>
+<li><code>breps(100)</code>：bootstrap 重复次数</li>
+</ul>
+</div>
+</section>
+<section id="borusyak-jaravel-spiess-restud-2024" class="slide level2">
+<h2>Borusyak, Jaravel &amp; Spiess (ReStud 2024)</h2>
+<div class="concept-box">
+<p><strong>插补估计量</strong></p>
+<ol type="1">
+<li>用<em>未处理</em>观测估计 <span class="math inline">\hat{\alpha}_i, \hat{\lambda}_t</span></li>
+<li>对处理观测<em>插补</em>反事实：<span class="math inline">\hat{Y}_{it}(0) = \hat{\alpha}_i + \hat{\lambda}_t</span></li>
+<li>单位-时期效应：<span class="math inline">\hat{\tau}_{it} = Y_{it} - \hat{Y}_{it}(0)</span></li>
+<li>按需聚合（<span class="math inline">g</span>、<span class="math inline">t</span>、事件时间）</li>
+</ol>
+</div>
+<div class="fragment">
+<p><strong>Stata 实现：<code>did_imputation</code></strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb15-1"><a></a>did_imputation Y i t Ei, allhorizons pretrend(5)</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><em>BJS 的卖点</em>：在齐次方差下效率最优（BLUE）；推断基于“随机化”——小样本可靠，自带预趋势的<em>正式检验</em>。</p>
+</div>
+</section>
+<section id="四种方法对比" class="slide level2">
+<h2>四种方法对比</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">维度</th>
+<th style="text-align: left;"><em>CS</em></th>
+<th style="text-align: left;"><em>SA</em></th>
+<th style="text-align: left;"><em>dCdH</em></th>
+<th style="text-align: left;"><em>BJS</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">框架</td>
+<td style="text-align: left;">非参数</td>
+<td style="text-align: left;">回归（IW）</td>
+<td style="text-align: left;">匹配式</td>
+<td style="text-align: left;">插补</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">关注对象</td>
+<td style="text-align: left;"><span class="math inline">ATT(g, t)</span></td>
+<td style="text-align: left;"><span class="math inline">\delta_{g, e}</span></td>
+<td style="text-align: left;">即期 ATT</td>
+<td style="text-align: left;">所有 <span class="math inline">(i, t)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">对照组</td>
+<td style="text-align: left;">从未 / 尚未</td>
+<td style="text-align: left;">最后处理</td>
+<td style="text-align: left;">从未 + 尚未</td>
+<td style="text-align: left;">所有未处理观测</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">协变量</td>
+<td style="text-align: left;">需显式加权</td>
+<td style="text-align: left;">直接入回归</td>
+<td style="text-align: left;">需显式加权</td>
+<td style="text-align: left;">直接入回归</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">小样本</td>
+<td style="text-align: left;">Bootstrap</td>
+<td style="text-align: left;">渐近</td>
+<td style="text-align: left;">渐近</td>
+<td style="text-align: left;">正式随机化</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>提示</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>实务建议</strong></p>
+<p>至少报告<em>两种</em>结果，并<em>说明一致性</em>。若方法间差距悬殊——往往是处理效应异质性被某一种方法的聚合方式放大了。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="五种估计量在同一-dgp-上的对比" class="slide level2">
+<h2>五种估计量在同一 DGP 上的对比</h2>
+
+<img data-src="figures/W4/five_estimators_example.png" class="quarto-figure quarto-figure-center r-stretch"><div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>提示</strong></p>
+</div>
+<div class="callout-content">
+<p>500 单位 × 15 期，处理时点在 10–16 年间随机分配，真实动态效应 <span class="math inline">\tau = t - 12.5</span>。OLS 事件研究在 post 期系统性偏低；四种现代估计量与真值基本重合。</p>
+</div>
+</div>
+</div>
+</section>
+<section id="stata-实战五估计量一图出lab-6" class="slide level2">
+<h2>Stata 实战：五估计量一图出（Lab §6）</h2>
+<div style="font-size: 0.85em;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb16-1"><a></a>* OLS（传统事件研究）</span>
+<span id="cb16-2"><a></a>reghdfe Y <span class="fu">F</span>*event L*event, a(i t) <span class="kw">cluster</span>(i)</span>
+<span id="cb16-3"><a></a><span class="kw">estimates</span> <span class="kw">store</span> ols</span>
+<span id="cb16-4"><a></a></span>
+<span id="cb16-5"><a></a>* Sun-Abraham</span>
+<span id="cb16-6"><a></a>eventstudyinteract Y L*event <span class="fu">F</span>*event, <span class="kw">vce</span>(<span class="kw">cluster</span> i) <span class="co">///</span></span>
+<span id="cb16-7"><a></a>    absorb(i t) cohort(Ei) control_cohort(lastcohort)</span>
+<span id="cb16-8"><a></a><span class="fu">matrix</span> sa_b = <span class="fu">e</span>(b_iw)</span>
+<span id="cb16-9"><a></a><span class="fu">matrix</span> sa_v = <span class="fu">e</span>(V_iw)</span>
+<span id="cb16-10"><a></a></span>
+<span id="cb16-11"><a></a>* Callaway-Sant'Anna</span>
+<span id="cb16-12"><a></a>csdid Y, ivar(i) time(t) gvar(gvar) notyet</span>
+<span id="cb16-13"><a></a><span class="kw">estat</span> event, estore(<span class="kw">cs</span>)</span>
+<span id="cb16-14"><a></a></span>
+<span id="cb16-15"><a></a>* <span class="kw">de</span> Chaisemartin &amp; D'Haultfoeuille</span>
+<span id="cb16-16"><a></a>did_multiplegt Y i t D, robust_dynamic dynamic(5) placebo(5) breps(100) <span class="kw">cluster</span>(i)</span>
+<span id="cb16-17"><a></a></span>
+<span id="cb16-18"><a></a>* Borusyak-Jaravel-Spiess</span>
+<span id="cb16-19"><a></a>did_imputation Y i t Ei, allhorizons pretrend(5)</span>
+<span id="cb16-20"><a></a></span>
+<span id="cb16-21"><a></a>* 一键出图</span>
+<span id="cb16-22"><a></a>event_plot btrue# bjs dcdh_b#dcdh_v <span class="kw">cs</span> sa_b#sa_v ols, <span class="co">///</span></span>
+<span id="cb16-23"><a></a>    stub_lag(tau# tau# Effect_# T+# L#event L#event) <span class="co">///</span></span>
+<span id="cb16-24"><a></a>    stub_lead(pre# pre# Placebo_# T-# F#event F#event) together</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section></section>
+<section>
+<section id="六历史重要imai-kim-wang-ajps-2021" class="title-slide slide level1 center" data-background-color="#003153">
+<h1>六、历史重要：Imai-Kim-Wang (AJPS 2021)</h1>
+
+</section>
+<section id="动态经济变量的挑战" class="slide level2">
+<h2>动态经济变量的挑战</h2>
+<div class="concept-box">
+<p><strong>许多经济变量天然具有自相关</strong></p>
+<p><span class="math display">Y_{it} = \rho Y_{i, t-1} + X_{it}^\prime \alpha + \lambda_t + \mu_i + \varepsilon_{it}</span></p>
+<ul>
+<li>R&amp;D、投资、资本存量、生产率、工资……都具有持续性</li>
+<li>当政策 <span class="math inline">D_{it}</span> 启动时，效应会“<em>回响</em>”到未来所有期</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>三种尺度的处理效应</strong></p>
+<ul>
+<li><em>即期效应</em>：<span class="math inline">\delta</span></li>
+<li><em>中期效应</em>（<span class="math inline">F</span> 期后）：<span class="math inline">\delta \cdot (1 - \rho^F)/(1 - \rho)</span></li>
+<li><em>长期效应</em>：<span class="math inline">\delta / (1 - \rho)</span></li>
+</ul>
+</div>
+</section>
+<section id="ashenfelter-dip" class="slide level2">
+<h2>Ashenfelter Dip</h2>
+<div class="example-box">
+<p><strong>Ashenfelter (1978)</strong></p>
+<p>职业培训参与者<em>在培训前</em>收入就出现下降。这个“坑”是<em>触发培训决定</em>的冲击（失业、家庭变故）留下的痕迹。</p>
+<p><em>直接比较培训前后</em>会把这个 dip 误读为培训带来的显著正效应。</p>
+</div>
+<div class="fragment">
+<div class="warning-box">
+<p><strong>修正后的平行趋势</strong></p>
+<p><span class="math display">E[Y_{it}(0) - Y_{i,t-1}(0) \mid D_{it}, \{Y_{i,t-\ell}\}_{\ell=1}^L, \boldsymbol{X}_{it}] = E[Y_{it}(0) - Y_{i,t-1}(0) \mid \{Y_{i,t-\ell}\}_{\ell=1}^L, \boldsymbol{X}_{it}]</span></p>
+<p><em>只有在控制了 L 期滞后 Y 之后</em>，平行趋势才能站得住脚。</p>
+</div>
+</div>
+</section>
+<section id="政策不稳定时的处理定义" class="slide level2">
+<h2>政策“不稳定”时的处理定义</h2>
+<p><span class="math display">
+\begin{array}{c|cccc|l}
+&amp; t=1 &amp; t=2 &amp; t=3 &amp; t=4 &amp; \text{类型} \\ \hline
+i=1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; \text{稳定处理} \\
+i=2 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; \text{不稳定 I} \\
+i=3 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; \text{不稳定 II} \\
+i=4 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; \text{不稳定 III} \\
+i=5 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \text{从未处理}
+\end{array}
+</span></p>
+<div class="fragment">
+<div class="concept-box">
+<p><strong>三种处理方式</strong></p>
+<ol type="1">
+<li><em>吸收态</em>（absorbing）：一旦处理就永远算处理</li>
+<li><em>进入 / 退出</em>分开估计：ATT（进入效应）vs.&nbsp;ART（退出效应）</li>
+<li><em>按历史路径条件化</em>：Imai-Kim-Wang 的核心思路</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="imai-kim-wang-的-attf-l-与-artf-l" class="slide level2">
+<h2>Imai-Kim-Wang 的 ATT(F, L) 与 ART(F, L)</h2>
+<div class="concept-box">
+<p><strong><span class="math inline">L</span>-period 历史条件下的效应</strong></p>
+<p><span class="math display">ATT(F, L) = E[Y^{01}_{it+F}(L) - Y^{00}_{it+F}(L) \mid D_{it} = 1, D_{i,t-1} = 0]</span> <span class="math display">ART(F, L) = E[Y^{10}_{it+F}(L) - Y^{11}_{it+F}(L) \mid D_{it} = 0, D_{i,t-1} = 1]</span></p>
+<ul>
+<li><span class="math inline">F</span>：政策变化后观察 <span class="math inline">F</span> 期</li>
+<li><span class="math inline">L</span>：假设潜在结果仅依赖过去 <span class="math inline">L</span> 期的处理历史</li>
+<li>允许 <span class="math inline">\{D_{i, t-\ell}\}_{\ell = 2}^L</span> 的任意历史</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>提示</strong></p>
+</div>
+<div class="callout-content">
+<p><strong><span class="math inline">F</span> 与 <span class="math inline">L</span> 的选择权衡</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">参数</th>
+<th style="text-align: left;">大值的好处</th>
+<th style="text-align: left;">大值的代价</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">L</span></td>
+<td style="text-align: left;">更可信的历史条件</td>
+<td style="text-align: left;">匹配样本缩小</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">F</span></td>
+<td style="text-align: left;">长期效应</td>
+<td style="text-align: left;">单位可能切换状态</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="面板匹配att-估计量" class="slide level2">
+<h2>面板匹配：ATT 估计量</h2>
+<div class="concept-box">
+<p><strong>匹配集合</strong></p>
+<p><span class="math display">\mathcal{M}_{it}^{ATT} = \{(m, t) \mid m \neq i,\ D_{mt} = 0,\ (D_{m, t-\ell})_{\ell=1}^L = (D_{i, t-\ell})_{\ell=1}^L\}</span></p>
+<p><em>同样的历史路径</em>、<em>相同的当期处理变动</em>的单位进入匹配集合。</p>
+</div>
+<div class="fragment">
+<p><strong>估计量</strong></p>
+<p><span class="math display">\widehat{ATT(F, L)} = \frac{1}{\sum G_{it}} \sum_{i, t} G_{it} \left[Y^{01}_{it+F} - Y^0_{it-1} - \sum_{m \in \mathcal{M}_{it}} w_{it}^m (Y_{m, t+F} - Y_{m, t-1})\right]</span></p>
+<ul>
+<li><span class="math inline">G_{it} = (D_{it} - D_{i, t-1}) \cdot \mathbb{1}\{|\mathcal{M}_{it}| \geq 1\}</span></li>
+<li>权重 <span class="math inline">w</span> 可用 Mahalanobis 距离 或 PSM（Rosenbaum-Rubin）</li>
+</ul>
+</div>
+</section>
+<section id="面板匹配直观" class="slide level2">
+<h2>面板匹配：直观</h2>
+
+<img data-src="figures/W4/PanelMatching.png" class="quarto-figure quarto-figure-center r-stretch"><p><em>横轴是时间</em>：每个处理单位寻找<em>过去 <span class="math inline">L</span> 期处理路径相同、当期刚切换</em>的对照单位，然后比较 <span class="math inline">F</span> 期后的结果。</p>
+</section>
+<section id="生产率视角的动态-did补充" class="slide level2">
+<h2>生产率视角的动态 DiD（补充）</h2>
+<div class="example-box">
+<p><strong>Chen (2023) 动态处理下的生产率估计</strong></p>
+<ul>
+<li>把<em>结构模型</em>（生产函数 + 生产率过程）与<em>潜在结果框架</em>嫁接</li>
+<li>刻画处理如何改变生产率转移过程 <span class="math inline">(\bar{h}, h^+, h^-)</span></li>
+<li>在<em>条件平行趋势</em> <span class="math inline">\bar{h}_0 = h_0^+</span> 下识别 <span class="math inline">ATT_0</span></li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/W4/productivity_eg3.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<p><em>示例</em>：绿色 vs.&nbsp;污染技术的独立生产率过程</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/W4/timeline.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<p><em>时点</em>：<span class="math inline">m_{it}</span> 是静态选择，<span class="math inline">(k_{it}, l_{it}, D_{it})</span> 是动态选择</p>
+</div></div>
+</section></section>
+<section>
+<section id="七实务指南" class="title-slide slide level1 center" data-background-color="#003153">
+<h1>七、实务指南</h1>
+
+</section>
+<section id="平行趋势不放心时怎么办" class="slide level2">
+<h2>平行趋势不放心时怎么办</h2>
+<div class="concept-box">
+<p><strong>层层递进的应对</strong></p>
+<ul>
+<li>加入<em>丰富的协变量</em>：条件平行趋势</li>
+<li>强制<em>重叠条件</em>：每个处理单位都存在 <span class="math inline">\boldsymbol{X}</span> 接近的对照</li>
+<li>检查<em>无预期</em>：处理前是否已有行为调整</li>
+<li>更换框架：IV、RD、SCM、CiC（quantile DiD）</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="warning-box">
+<p><strong>不该做的事</strong></p>
+<ul>
+<li>简单“加个时间趋势” → 往往吸收真实效应</li>
+<li>数据驱动地“切样本” → 违反预注册</li>
+<li>报告“通过了平行趋势检验” → <em>错误</em>措辞，只能说“未拒绝”</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="did-研究的标准清单" class="slide level2">
+<h2>DID 研究的标准清单</h2>
+
+<img data-src="figures/W4/DID_checklist.png" class="quarto-figure quarto-figure-center r-stretch"><p><em>Roth, Sant’Anna, Bilinski &amp; Poe (JoE 2023)</em>：一份写在论文审稿评论里的“必做清单”。</p>
+</section>
+<section id="配套软件工具" class="slide level2">
+<h2>配套软件工具</h2>
+
+<img data-src="figures/W4/DID_software.png" class="quarto-figure quarto-figure-center r-stretch"><p><em>Stata</em>：<code>csdid</code>、<code>eventstudyinteract</code>、<code>did_multiplegt</code>、<code>did_imputation</code>、<code>sdid</code>、<code>bacondecomp</code>、<code>honestdid</code> <em>R</em>：<code>did</code>、<code>fixest</code>（<code>sunab()</code>、<code>i()</code>）、<code>synthdid</code>、<code>DIDmultiplegt</code>、<code>didimputation</code>、<code>HonestDiD</code></p>
+</section></section>
+<section>
+<section id="本讲要点" class="title-slide slide level1 center" data-background-color="#003153">
+<h1>本讲要点</h1>
+
+</section>
+<section id="本讲要点一" class="slide level2">
+<h2>本讲要点（一）</h2>
+<div class="concept-box">
+<ol type="1">
+<li><em>匹配类 DiD 把“可观测”拉平</em>
+<ul>
+<li>PSM-DID：降维到 <span class="math inline">P(\boldsymbol{Z})</span> 上匹配</li>
+<li>半参数 DiD（Abadie 2005）：权重驱动，天然适合子群</li>
+</ul></li>
+<li><em>合成 DiD 把 SCM 与 DiD 融合</em>
+<ul>
+<li>单位权重弱化平行趋势依赖</li>
+<li>时期权重提升效率，保留大面板推断</li>
+<li><code>sdid</code> / <code>synthdid</code> 正在成为默认方法</li>
+</ul></li>
+<li><em>交错处理下 TWFE 会失灵</em>
+<ul>
+<li>Bacon 分解：TWFE = 所有 2×2 DiD 的加权平均</li>
+<li>早处理组作为晚处理组的对照 → <em>负权重</em> + 错误符号</li>
+</ul></li>
+</ol>
+</div>
+</section>
+<section id="本讲要点二" class="slide level2">
+<h2>本讲要点（二）</h2>
+<div class="concept-box">
+<ol start="4" type="1">
+<li><em>四个现代估计量各有所长</em>
+<ul>
+<li>CS：非参数 + 明确组群-时期 ATT</li>
+<li>SA：仍在回归框架，协变量易加</li>
+<li>dCdH：关注即期效应，有完整安慰剂工具</li>
+<li>BJS：插补 + 效率最优，推断基于随机化</li>
+</ul></li>
+<li><em>当历史重要——Imai-Kim-Wang 面板匹配</em>
+<ul>
+<li>按 <span class="math inline">L</span> 期历史路径条件化</li>
+<li>ATT(F, L) 与 ART(F, L) 分开估计</li>
+<li>应对不稳定政策、动态反事实</li>
+</ul></li>
+<li><em>DiD 实战清单</em>
+<ul>
+<li>一份论文至少报告：预趋势图、安慰剂、两种以上现代估计量、权重诊断、Honest DiD 敏感性</li>
+</ul></li>
+</ol>
+</div>
+</section>
+<section id="下节课预告" class="slide level2">
+<h2>下节课预告</h2>
+<p><strong>第 5 周：因果机器学习</strong></p>
+<ul>
+<li><em>预测 vs.&nbsp;因果</em>：ML 能做什么、不能做什么</li>
+<li><em>LASSO 与高维控制变量选择</em>——Post-LASSO 的陷阱</li>
+<li><em>Double / Debiased ML</em>（DML）——Neyman 正交化 + 交叉拟合</li>
+<li><em>因果森林</em>与异质处理效应（HTE）</li>
+<li>实战：<code>doubleml</code> / <code>econml</code> / <code>grf</code></li>
+</ul>
+<div class="fragment">
+<div class="concept-box">
+<p><em>核心思想</em></p>
+<p>当控制变量数量与样本量可比（甚至更大）时，传统线性回归会失效。ML 提供<em>预测能力</em>——但<em>预测 ≠ 因果</em>。DML 通过<em>正交化</em>让两者结合。</p>
+</div>
+</div>
+</section></section>
+<section id="参考文献" class="title-slide slide level1 center">
+<h1>参考文献</h1>
+<ul>
+<li>Abadie, A. (2005). Semiparametric difference-in-differences estimators. <em>Review of Economic Studies</em>, 72(1), 1–19.</li>
+<li>Abadie, A., &amp; Imbens, G. W. (2006). Large sample properties of matching estimators for average treatment effects. <em>Econometrica</em>, 74(1), 235–267.</li>
+<li>Arkhangelsky, D., Athey, S., Hirshberg, D. A., Imbens, G. W., &amp; Wager, S. (2021). Synthetic difference-in-differences. <em>American Economic Review</em>, 111(12), 4088–4118.</li>
+<li>Borusyak, K., Jaravel, X., &amp; Spiess, J. (2024). Revisiting event study designs: Robust and efficient estimation. <em>Review of Economic Studies</em>, 91(6), 3253–3285.</li>
+<li>Callaway, B., &amp; Sant’Anna, P. H. C. (2021). Difference-in-differences with multiple time periods. <em>Journal of Econometrics</em>, 225(2), 200–230.</li>
+<li>de Chaisemartin, C., &amp; D’Haultfoeuille, X. (2020). Two-way fixed effects estimators with heterogeneous treatment effects. <em>American Economic Review</em>, 110(9), 2964–2996.</li>
+<li>Goodman-Bacon, A. (2021). Difference-in-differences with variation in treatment timing. <em>Journal of Econometrics</em>, 225(2), 254–277.</li>
+<li>Heckman, J. J., Ichimura, H., &amp; Todd, P. E. (1998). Matching as an econometric evaluation estimator. <em>Review of Economic Studies</em>, 65(2), 261–294.</li>
+<li>Imai, K., Kim, I. S., &amp; Wang, E. H. (2021). Matching methods for causal inference with time-series cross-sectional data. <em>American Journal of Political Science</em>, 67(3), 587–605.</li>
+<li>Roth, J., Sant’Anna, P. H. C., Bilinski, A., &amp; Poe, J. (2023). What’s trending in difference-in-differences? A synthesis of the recent econometrics literature. <em>Journal of Econometrics</em>, 235(2), 2218–2244.</li>
+<li>Sun, L., &amp; Abraham, S. (2021). Estimating dynamic treatment effects in event studies with heterogeneous treatment effects. <em>Journal of Econometrics</em>, 225(2), 175–199.</li>
+<li>Wooldridge, J. M. (2021). Two-way fixed effects, the two-way Mundlak regression, and difference-in-differences estimators. <em>Working Paper</em>.</li>
+</ul>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1400,
+
+        height: 788,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "已复制");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "已复制");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/zhiyuanryanchen\.github\.io\/emprical-methods");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
