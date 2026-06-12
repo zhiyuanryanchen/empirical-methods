@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>作业 1：交错处理、匹配策略与 Monte Carlo 验证 – 经济与商务实证研究方法</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "没有结果",
+    "search-matching-documents-text": "匹配的文档",
+    "search-copy-link-title": "复制搜索链接",
+    "search-hide-matches-text": "隐藏其它匹配结果",
+    "search-more-match-text": "更多匹配结果",
+    "search-more-matches-text": "更多匹配结果",
+    "search-clear-button-title": "清除",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "提交",
+    "search-label": "搜索"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../lecture-notes.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">经济与商务实证研究方法</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="搜索"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="展开或折叠导航栏" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">首页</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../syllabus.html"> 
+<span class="menu-text">课程大纲</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">讲义</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/LectureNotes/W1_AI_Era_Empirical_Research.html">
+ <span class="dropdown-text">第1周：AI时代的实证研究</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/LectureNotes/W1_AI_Era_Empirical_Research_notes.html">
+ <span class="dropdown-text">第1周：详细讲义</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/LectureNotes/W2_Computational_Foundations.html">
+ <span class="dropdown-text">第2周：计算基础与工作流</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/LectureNotes/W2_Computational_Foundations_notes.html">
+ <span class="dropdown-text">第2周：详细讲义</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/LectureNotes/W3_Panel_and_Classical_DID.html">
+ <span class="dropdown-text">第3周：面板数据与经典 DiD</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/LectureNotes/W3_Panel_and_Classical_DID_notes.html">
+ <span class="dropdown-text">第3周：详细讲义</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/LectureNotes/W4_Modern_DID_and_Synthetic_Control.html">
+ <span class="dropdown-text">第4周：现代 DiD 与合成控制</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/LectureNotes/W4_Modern_DID_and_Synthetic_Control_notes.html">
+ <span class="dropdown-text">第4周：详细讲义</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/LectureNotes/W5_Causal_ML.html">
+ <span class="dropdown-text">第5周：因果机器学习</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/LectureNotes/W5_Causal_ML_notes.html">
+ <span class="dropdown-text">第5周：详细讲义</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/LectureNotes/W6_Structural_Foundations.html">
+ <span class="dropdown-text">第6周：结构估计基础</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/LectureNotes/W6_Structural_Foundations_notes.html">
+ <span class="dropdown-text">第6周：详细讲义</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/LectureNotes/W7_Structural_Applications.html">
+ <span class="dropdown-text">第7周：结构估计应用</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">作业</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../../2026Spring/Assignments/assignment01_staggered_matching_mc.html">
+ <span class="dropdown-text">作业1：交错处理与Monte Carlo验证</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../resources.html"> 
+<span class="menu-text">资源</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">本页导航</h2>
+   
+  <ul>
+  <li><a href="#作业目标" id="toc-作业目标" class="nav-link active" data-scroll-target="#作业目标">作业目标</a></li>
+  <li><a href="#背景一从-22-did-到交错处理" id="toc-背景一从-22-did-到交错处理" class="nav-link" data-scroll-target="#背景一从-22-did-到交错处理">背景一：从 2×2 DID 到交错处理</a></li>
+  <li><a href="#背景二匹配策略在交错处理中的角色" id="toc-背景二匹配策略在交错处理中的角色" class="nav-link" data-scroll-target="#背景二匹配策略在交错处理中的角色">背景二：匹配策略在交错处理中的角色</a>
+  <ul class="collapse">
+  <li><a href="#匹配策略-1同期-psm-did" id="toc-匹配策略-1同期-psm-did" class="nav-link" data-scroll-target="#匹配策略-1同期-psm-did">匹配策略 1：同期 PSM-DID</a></li>
+  <li><a href="#匹配策略-2合成控制与合成双重差分" id="toc-匹配策略-2合成控制与合成双重差分" class="nav-link" data-scroll-target="#匹配策略-2合成控制与合成双重差分">匹配策略 2：合成控制与合成双重差分</a></li>
+  <li><a href="#匹配策略-3滚动匹配rolling-matching" id="toc-匹配策略-3滚动匹配rolling-matching" class="nav-link" data-scroll-target="#匹配策略-3滚动匹配rolling-matching">匹配策略 3：滚动匹配（Rolling Matching）</a></li>
+  </ul></li>
+  <li><a href="#背景三现代-did-估计量" id="toc-背景三现代-did-估计量" class="nav-link" data-scroll-target="#背景三现代-did-估计量">背景三：现代 DID 估计量</a>
+  <ul class="collapse">
+  <li><a href="#callaway-santanna-2021" id="toc-callaway-santanna-2021" class="nav-link" data-scroll-target="#callaway-santanna-2021">Callaway &amp; Sant’Anna (2021)</a></li>
+  <li><a href="#sun-abraham-2021" id="toc-sun-abraham-2021" class="nav-link" data-scroll-target="#sun-abraham-2021">Sun &amp; Abraham (2021)</a></li>
+  <li><a href="#borusyak-jaravel-spiess-2024-插补估计量" id="toc-borusyak-jaravel-spiess-2024-插补估计量" class="nav-link" data-scroll-target="#borusyak-jaravel-spiess-2024-插补估计量">Borusyak, Jaravel &amp; Spiess (2024) — 插补估计量</a></li>
+  </ul></li>
+  <li><a href="#任务一设计交错处理的-dgp30" id="toc-任务一设计交错处理的-dgp30" class="nav-link" data-scroll-target="#任务一设计交错处理的-dgp30">任务一：设计交错处理的 DGP（30%）</a></li>
+  <li><a href="#任务二实现匹配策略与估计量25" id="toc-任务二实现匹配策略与估计量25" class="nav-link" data-scroll-target="#任务二实现匹配策略与估计量25">任务二：实现匹配策略与估计量（25%）</a>
+  <ul class="collapse">
+  <li><a href="#必须实现的估计方法" id="toc-必须实现的估计方法" class="nav-link" data-scroll-target="#必须实现的估计方法">必须实现的估计方法</a></li>
+  <li><a href="#报告要求" id="toc-报告要求" class="nav-link" data-scroll-target="#报告要求">报告要求</a></li>
+  </ul></li>
+  <li><a href="#任务三monte-carlo-验证与理论推导30" id="toc-任务三monte-carlo-验证与理论推导30" class="nav-link" data-scroll-target="#任务三monte-carlo-验证与理论推导30">任务三：Monte Carlo 验证与理论推导（30%）</a>
+  <ul class="collapse">
+  <li><a href="#统计性质验证" id="toc-统计性质验证" class="nav-link" data-scroll-target="#统计性质验证">3.1 统计性质验证</a></li>
+  <li><a href="#理论推导要求" id="toc-理论推导要求" class="nav-link" data-scroll-target="#理论推导要求">3.2 理论推导要求</a></li>
+  </ul></li>
+  <li><a href="#任务四实证论文复现或批判15" id="toc-任务四实证论文复现或批判15" class="nav-link" data-scroll-target="#任务四实证论文复现或批判15">任务四：实证论文复现或批判（15%）</a>
+  <ul class="collapse">
+  <li><a href="#选项-a复现replication" id="toc-选项-a复现replication" class="nav-link" data-scroll-target="#选项-a复现replication">选项 A：复现（Replication）</a></li>
+  <li><a href="#选项-b批判性评价critical-assessment" id="toc-选项-b批判性评价critical-assessment" class="nav-link" data-scroll-target="#选项-b批判性评价critical-assessment">选项 B：批判性评价（Critical Assessment）</a></li>
+  </ul></li>
+  <li><a href="#提交要求" id="toc-提交要求" class="nav-link" data-scroll-target="#提交要求">提交要求</a>
+  <ul class="collapse">
+  <li><a href="#研究报告pdf-markdown-源文件" id="toc-研究报告pdf-markdown-源文件" class="nav-link" data-scroll-target="#研究报告pdf-markdown-源文件">1. 研究报告（PDF + Markdown 源文件）</a></li>
+  <li><a href="#可复现代码" id="toc-可复现代码" class="nav-link" data-scroll-target="#可复现代码">2. 可复现代码</a></li>
+  <li><a href="#ai-使用声明" id="toc-ai-使用声明" class="nav-link" data-scroll-target="#ai-使用声明">3. AI 使用声明</a></li>
+  </ul></li>
+  <li><a href="#评分标准" id="toc-评分标准" class="nav-link" data-scroll-target="#评分标准">评分标准</a></li>
+  <li><a href="#建议工具与包" id="toc-建议工具与包" class="nav-link" data-scroll-target="#建议工具与包">建议工具与包</a>
+  <ul class="collapse">
+  <li><a href="#stata" id="toc-stata" class="nav-link" data-scroll-target="#stata">Stata</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  </ul></li>
+  <li><a href="#学术诚信" id="toc-学术诚信" class="nav-link" data-scroll-target="#学术诚信">学术诚信</a></li>
+  <li><a href="#参考文献" id="toc-参考文献" class="nav-link" data-scroll-target="#参考文献">参考文献</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">作业 1：交错处理、匹配策略与 Monte Carlo 验证</h1>
+<p class="subtitle lead">经济与商务实证研究方法 — 2026 春季学期</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">发布于</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2026年5月15日</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="作业目标" class="level2">
+<h2 class="anchored" data-anchor-id="作业目标">作业目标</h2>
+<p>本次作业要求你在第 3 周经典 DiD 与第 4 周现代 DiD 的基础上，进入<strong>交错处理（staggered adoption）</strong>框架，系统比较不同匹配策略与现代 DID 估计量的表现。你需要面对更贴近现实的政策评估场景：处理在不同时间点分批次进入，且处理效应可能随时间动态变化。</p>
+<p>核心任务包括：</p>
+<ol type="1">
+<li>设计一个<strong>渐进式处理</strong>的数据生成过程（DGP），包含多期面板、异质性处理效应和动态趋势</li>
+<li>比较至少<strong>两种匹配或合成策略</strong>（如：同期 PSM-DID、滚动 PSM-DID、合成控制或合成双重差分）与 DID 的结合效果</li>
+<li>实现至少<strong>两种现代 DID 估计量</strong>（如 Callaway-Sant’Anna、Sun-Abraham 或 Borusyak-Jaravel-Spiess）作为基准</li>
+<li>通过<strong>Monte Carlo 模拟</strong>验证各估计量在不同识别条件下的统计性质（偏误、方差、覆盖率）</li>
+<li>进行<strong>理论推导</strong>，解释模拟结果背后的识别逻辑与偏误来源</li>
+</ol>
+<p>本作业对应第 3 周与第 4 周讲义内容：面板数据与固定效应、经典 DiD、交错 DID、匹配类 DiD、合成控制、Goodman-Bacon 分解与现代 DID 估计量。</p>
+<hr>
+</section>
+<section id="背景一从-22-did-到交错处理" class="level2">
+<h2 class="anchored" data-anchor-id="背景一从-22-did-到交错处理">背景一：从 2×2 DID 到交错处理</h2>
+<p>经典 DID 假设所有处理单位在同一时间接受处理。但在现实政策评估中，处理往往是渐进实施的：</p>
+<ul>
+<li>不同城市在不同年份试点同一政策</li>
+<li>不同企业在不同季度采用同一技术</li>
+<li>不同个体在不同时间注册同一项目</li>
+</ul>
+<p>这种<strong>交错处理（staggered adoption）</strong>带来了两个核心挑战：</p>
+<p><strong>挑战 1：TWFE 的偏误</strong></p>
+<p>在交错处理下，传统双向固定效应（TWFE）回归会产生<strong>负权重问题</strong>（Goodman-Bacon 2021）。早期接受处理的单位会被当作后期接受处理单位的“控制组”，而这些“控制组”实际上已经受到了处理，导致估计量出现偏误。</p>
+<p><strong>挑战 2：动态处理效应的异质性</strong></p>
+<p>处理效应可能随时间变化（如：短期为正、长期衰减），且不同批次（cohort）的处理效应可能存在异质性。这使得简单的平均处理效应（ATT）难以捕捉完整的政策效果。</p>
+<hr>
+</section>
+<section id="背景二匹配策略在交错处理中的角色" class="level2">
+<h2 class="anchored" data-anchor-id="背景二匹配策略在交错处理中的角色">背景二：匹配策略在交错处理中的角色</h2>
+<p>在交错处理框架下，匹配策略需要相应调整：</p>
+<section id="匹配策略-1同期-psm-did" class="level3">
+<h3 class="anchored" data-anchor-id="匹配策略-1同期-psm-did">匹配策略 1：同期 PSM-DID</h3>
+<p>在每个处理批次进入时，仅使用该时点尚未处理或从未处理的单位作为控制池，在倾向得分或关键协变量上匹配后估计该批次的 ATT。</p>
+</section>
+<section id="匹配策略-2合成控制与合成双重差分" class="level3">
+<h3 class="anchored" data-anchor-id="匹配策略-2合成控制与合成双重差分">匹配策略 2：合成控制与合成双重差分</h3>
+<p>合成控制为处理单位构建由未处理单位加权形成的“虚拟对照”（Abadie, Diamond &amp; Hainmueller 2010）；合成双重差分进一步结合单位权重、时期权重与 DiD 结构（Arkhangelsky et al.&nbsp;2021）。</p>
+</section>
+<section id="匹配策略-3滚动匹配rolling-matching" class="level3">
+<h3 class="anchored" data-anchor-id="匹配策略-3滚动匹配rolling-matching">匹配策略 3：滚动匹配（Rolling Matching）</h3>
+<p>在每个时间点重新进行匹配，确保控制组始终来自尚未处理或从未处理的单位，避免使用已经处理的单位作为控制组。</p>
+<hr>
+</section>
+</section>
+<section id="背景三现代-did-估计量" class="level2">
+<h2 class="anchored" data-anchor-id="背景三现代-did-估计量">背景三：现代 DID 估计量</h2>
+<p>作为基准比较，你需要实现至少两种现代 DID 估计量：</p>
+<section id="callaway-santanna-2021" class="level3">
+<h3 class="anchored" data-anchor-id="callaway-santanna-2021">Callaway &amp; Sant’Anna (2021)</h3>
+<p>通过“组别-时间”ATT 的构建，避免 TWFE 的负权重问题：</p>
+<p><span class="math display">\[
+ATT(g,t) = E[Y_t - Y_{g-1} \mid G_g = 1] - E[Y_t - Y_{g-1} \mid C = 1]
+\]</span></p>
+<p>其中 <span class="math inline">\(G_g\)</span> 表示在第 <span class="math inline">\(g\)</span> 期接受处理的组别，<span class="math inline">\(C\)</span> 表示从未接受处理的组别（clean control）。</p>
+</section>
+<section id="sun-abraham-2021" class="level3">
+<h3 class="anchored" data-anchor-id="sun-abraham-2021">Sun &amp; Abraham (2021)</h3>
+<p>通过交互加权估计量，控制不同处理批次的异质性趋势：</p>
+<p><span class="math display">\[
+Y_{it} = \sum_{g} \sum_{l \neq -1} \mu_{g,l} \cdot 1\{G_i = g\} \cdot 1\{t - g = l\} + \gamma_i + \lambda_t + \varepsilon_{it}
+\]</span></p>
+</section>
+<section id="borusyak-jaravel-spiess-2024-插补估计量" class="level3">
+<h3 class="anchored" data-anchor-id="borusyak-jaravel-spiess-2024-插补估计量">Borusyak, Jaravel &amp; Spiess (2024) — 插补估计量</h3>
+<p>利用未处理观测的 outcome 预测处理单位的反事实结果，可使用从未处理单位或尚未处理时期提供的 clean controls。</p>
+<hr>
+</section>
+</section>
+<section id="任务一设计交错处理的-dgp30" class="level2">
+<h2 class="anchored" data-anchor-id="任务一设计交错处理的-dgp30">任务一：设计交错处理的 DGP（30%）</h2>
+<p>请设计一个多期面板数据的模拟环境。最低要求：</p>
+<ul>
+<li><strong>面板结构</strong>：<span class="math inline">\(N \geq 500\)</span> 个个体，<span class="math inline">\(T \geq 10\)</span> 个时期</li>
+<li><strong>处理分配</strong>：至少 3 个处理批次（cohorts），在不同时间点进入</li>
+<li><strong>协变量</strong>：至少 2 个可观测协变量 <span class="math inline">\(X_i\)</span>（至少 1 个连续变量、1 个离散变量）</li>
+<li><strong>处理效应</strong>：设定<strong>动态处理效应</strong> <span class="math inline">\(\tau_{it}\)</span>，可随时间变化</li>
+<li><strong>趋势异质性</strong>：允许不同批次或不同协变量子群具有不同的趋势</li>
+</ul>
+<p>你需要明确写出以下方程：</p>
+<ol type="1">
+<li><strong>处理分配机制</strong>：<span class="math inline">\(D_{it} = f(X_i, \alpha_i, \varepsilon_i, t)\)</span></li>
+<li><strong>潜在结果方程</strong>：<span class="math inline">\(Y_{it}(0)\)</span> 和 <span class="math inline">\(Y_{it}(1)\)</span> 的生成过程</li>
+<li><strong>观测结果</strong>：<span class="math inline">\(Y_{it} = D_{it} \cdot Y_{it}(1) + (1-D_{it}) \cdot Y_{it}(0)\)</span></li>
+</ol>
+<p><strong>设计要求</strong>：</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">场景</th>
+<th style="text-align: left;">目的</th>
+<th style="text-align: left;">关键设定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>场景 A</strong></td>
+<td style="text-align: left;">基准情形：现代 DID 应表现良好</td>
+<td style="text-align: left;">平行趋势成立，存在 never-treated 单位，处理效应同质</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>场景 B</strong></td>
+<td style="text-align: left;">匹配策略的优势情形</td>
+<td style="text-align: left;">处理分配与协变量相关，存在选择偏误，但条件平行趋势成立</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>场景 C</strong></td>
+<td style="text-align: left;">匹配策略的局限情形</td>
+<td style="text-align: left;">存在不可观测的时变混淆，或缺乏 clean controls</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>场景 D</strong></td>
+<td style="text-align: left;">动态效应与异质性</td>
+<td style="text-align: left;">处理效应随时间衰减，不同 cohort 效应不同</td>
+</tr>
+</tbody>
+</table>
+<p>至少模拟 <strong>1000 次</strong>（建议 2000 次以提高精度）。</p>
+<hr>
+</section>
+<section id="任务二实现匹配策略与估计量25" class="level2">
+<h2 class="anchored" data-anchor-id="任务二实现匹配策略与估计量25">任务二：实现匹配策略与估计量（25%）</h2>
+<section id="必须实现的估计方法" class="level3">
+<h3 class="anchored" data-anchor-id="必须实现的估计方法">必须实现的估计方法</h3>
+<p><strong>A. 匹配 + DID 策略（至少选 2 种）</strong></p>
+<ol type="1">
+<li><strong>同期 PSM-DID</strong>：在每个 cohort 进入时，使用当时的未处理单位进行倾向得分匹配，然后估计 DID</li>
+<li><strong>滚动 PSM-DID</strong>：在每个时期重新匹配，确保控制组始终是尚未处理的单位</li>
+<li><strong>合成控制法（SC）</strong>：为每个处理单位构建合成控制，计算处理效应</li>
+<li><strong>合成双重差分（Synthetic DID）</strong>：Arkhangelsky et al.&nbsp;(2021) 的方法，结合合成控制与 DID</li>
+</ol>
+<p><strong>B. 现代 DID 估计量（至少选 2 种）</strong></p>
+<ol type="1">
+<li><strong>Callaway-Sant’Anna (2021)</strong>：使用 <code>did</code> 包（R）或 <code>csdid</code>（Stata）</li>
+<li><strong>Sun-Abraham (2021)</strong>：使用 <code>eventstudyinteract</code>（Stata）或手动实现</li>
+<li><strong>Borusyak-Jaravel-Spiess (2024)</strong>：使用 <code>did_imputation</code>（Stata）或手动实现</li>
+</ol>
+<p><strong>C. 基准比较</strong></p>
+<ul>
+<li><strong>传统 TWFE</strong>：作为“反面教材”，展示其在交错处理下的偏误</li>
+</ul>
+</section>
+<section id="报告要求" class="level3">
+<h3 class="anchored" data-anchor-id="报告要求">报告要求</h3>
+<p>对每种方法，报告：</p>
+<ul>
+<li><strong>估计准确性</strong>：Bias、RMSE、Median Absolute Error</li>
+<li><strong>推断有效性</strong>：95% 置信区间覆盖率、标准误 vs 蒙特卡洛标准差</li>
+<li><strong>动态效应估计</strong>：事件研究图（event-study plot），展示处理前后各期的估计系数</li>
+<li><strong>异质性分析</strong>：不同 cohort 或不同协变量子群的 ATT 估计</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="任务三monte-carlo-验证与理论推导30" class="level2">
+<h2 class="anchored" data-anchor-id="任务三monte-carlo-验证与理论推导30">任务三：Monte Carlo 验证与理论推导（30%）</h2>
+<section id="统计性质验证" class="level3">
+<h3 class="anchored" data-anchor-id="统计性质验证">3.1 统计性质验证</h3>
+<p>针对你的 DGP，严格验证以下理论命题：</p>
+<p><strong>命题 1</strong>：当存在 never-treated 单位时，Callaway-Sant’Anna 估计量是否一致？通过模拟验证其偏误是否趋近于 0。</p>
+<p><strong>命题 2</strong>：当平行趋势只在条件于 <span class="math inline">\(X_i\)</span> 时成立，滚动匹配 DID 是否能恢复一致性？与无条件 DID 比较。</p>
+<p><strong>命题 3</strong>：合成控制法在什么条件下优于传统匹配？（提示：考虑处理单位数量、donor pool 的相似性）</p>
+<p><strong>命题 4</strong>：传统 TWFE 在交错处理下的偏误方向与大小。参考 Goodman-Bacon (2021) 的分解，你的 DGP 中哪些比较贡献了负权重？</p>
+</section>
+<section id="理论推导要求" class="level3">
+<h3 class="anchored" data-anchor-id="理论推导要求">3.2 理论推导要求</h3>
+<p>请选择以下<strong>至少一个</strong>命题进行<strong>严格的数学推导</strong>：</p>
+<p><strong>选项 A</strong>：推导 Callaway-Sant’Anna ATT(g,t) 的识别条件</p>
+<p>在“条件平行趋势”和“无预期效应”假设下，证明：</p>
+<p><span class="math display">\[
+ATT(g,t) = E[Y_t - Y_{g-1} \mid G_g = 1] - E[Y_t - Y_{g-1} \mid C = 1]
+\]</span></p>
+<p>能够识别真实的平均处理效应。</p>
+<p><strong>选项 B</strong>：推导 TWFE 在交错处理下的偏误分解</p>
+<p>参考 Goodman-Bacon (2021)，证明 TWFE 估计量可以分解为不同 2×2 DID 比较的加权平均，且其中部分权重为负。</p>
+<p><strong>选项 C</strong>：推导匹配估计量的渐近方差</p>
+<p>在特定匹配策略下，推导 ATT 估计量的渐近分布，并讨论 bootstrap 标准误的适用性。</p>
+<p><strong>推导要求</strong>： - 明确定义所有符号和假设 - 逐步推导，每一步说明依据 - 最终结论与模拟结果相互验证</p>
+<hr>
+</section>
+</section>
+<section id="任务四实证论文复现或批判15" class="level2">
+<h2 class="anchored" data-anchor-id="任务四实证论文复现或批判15">任务四：实证论文复现或批判（15%）</h2>
+<p>选择一篇使用<strong>交错 DID 或合成控制</strong>的学术论文（建议来自 AER、QJE、JPE、Econometrica、JoE、AEJ: Applied 等期刊）。</p>
+<section id="选项-a复现replication" class="level3">
+<h3 class="anchored" data-anchor-id="选项-a复现replication">选项 A：复现（Replication）</h3>
+<p>如果论文数据公开，尝试： - 使用原文方法复现主要结果 - 使用现代 DID 估计量（如 Callaway-Sant’Anna）重新估计，比较与 TWFE 的差异 - 评估原文的识别策略在现代方法框架下的稳健性</p>
+</section>
+<section id="选项-b批判性评价critical-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="选项-b批判性评价critical-assessment">选项 B：批判性评价（Critical Assessment）</h3>
+<p>如果数据不公开，进行严格的识别评价： - 论文是否讨论了交错处理下 TWFE 的潜在偏误？ - 平行趋势假设是否可信？作者如何检验？ - 是否存在 clean controls？如果没有，估计量可能面临什么问题？ - 根据你的模拟经验，该论文的结论在何种条件下可信，何种条件下脆弱？</p>
+<hr>
+</section>
+</section>
+<section id="提交要求" class="level2">
+<h2 class="anchored" data-anchor-id="提交要求">提交要求</h2>
+<section id="研究报告pdf-markdown-源文件" class="level3">
+<h3 class="anchored" data-anchor-id="研究报告pdf-markdown-源文件">1. 研究报告（PDF + Markdown 源文件）</h3>
+<p>报告应包含： - <strong>DGP 设计</strong>：完整的数据生成方程，说明每个参数的经济/统计含义 - <strong>理论推导</strong>：至少一个命题的严格证明 - <strong>模拟结果</strong>：表格 + 图形，包含事件研究图、偏误-方差权衡图、覆盖率表 - <strong>结果解读</strong>：不仅报告“哪个方法更好”，更要解释“为什么”以及“在什么条件下” - <strong>论文评价/复现</strong>：详细的评估或复现报告</p>
+<p><strong>字数要求</strong>：4000-8000 字（不含代码和附录）</p>
+</section>
+<section id="可复现代码" class="level3">
+<h3 class="anchored" data-anchor-id="可复现代码">2. 可复现代码</h3>
+<ul>
+<li>提供完整的、可独立运行的代码（Stata do-file、R script、Python notebook 均可）</li>
+<li>在代码开头设置随机种子（<code>set seed</code> 或 <code>np.random.seed</code>）</li>
+<li>代码应能一键生成所有表格和图形</li>
+<li>如使用外部包，请在开头列出安装命令</li>
+</ul>
+</section>
+<section id="ai-使用声明" class="level3">
+<h3 class="anchored" data-anchor-id="ai-使用声明">3. AI 使用声明</h3>
+<p>如果使用 AI 辅助编程、推导或写作，请提交： - 使用的 AI 工具列表 - 关键 prompt 示例 - AI 输出的原始内容 + 你的修改说明 - 最终版本中哪些内容完全由你完成</p>
+<p><strong>注意</strong>：AI 使用不扣分，但未披露将被视为学术不端。</p>
+<hr>
+</section>
+</section>
+<section id="评分标准" class="level2">
+<h2 class="anchored" data-anchor-id="评分标准">评分标准</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 38%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">维度</th>
+<th style="text-align: center;">权重</th>
+<th style="text-align: left;">评分要点</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DGP 设计</td>
+<td style="text-align: center;">20%</td>
+<td style="text-align: left;">交错处理设定合理，动态效应与异质性设计清晰，场景覆盖充分</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">方法实现</td>
+<td style="text-align: center;">25%</td>
+<td style="text-align: left;">匹配策略与现代 DID 实现正确，代码可复现，图形规范</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">理论推导</td>
+<td style="text-align: center;">25%</td>
+<td style="text-align: left;">推导严格，假设明确，结论与模拟相互验证</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Monte Carlo 分析</td>
+<td style="text-align: center;">20%</td>
+<td style="text-align: left;">统计指标完整，事件研究图清晰，对偏误来源有深入解释</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">论文复现/评价</td>
+<td style="text-align: center;">10%</td>
+<td style="text-align: left;">评价深入，能结合模拟经验指出原论文的稳健性与脆弱性</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="建议工具与包" class="level2">
+<h2 class="anchored" data-anchor-id="建议工具与包">建议工具与包</h2>
+<section id="stata" class="level3">
+<h3 class="anchored" data-anchor-id="stata">Stata</h3>
+<ul>
+<li><code>csdid</code>（Callaway-Sant’Anna）</li>
+<li><code>eventstudyinteract</code>（Sun-Abraham）</li>
+<li><code>did_imputation</code>（Borusyak-Jaravel-Spiess）</li>
+<li><code>synth</code>（合成控制）</li>
+<li><code>sdid</code>（Synthetic DID）</li>
+<li><code>reghdfe</code>（高维固定效应，用于基准 TWFE）</li>
+<li><code>psmatch2</code> 或 <code>teffects psmatch</code>（倾向得分匹配）</li>
+</ul>
+</section>
+<section id="r" class="level3">
+<h3 class="anchored" data-anchor-id="r">R</h3>
+<ul>
+<li><code>did</code>（Callaway-Sant’Anna）</li>
+<li><code>fixest</code>（固定效应与事件研究）</li>
+<li><code>MatchIt</code>（匹配）</li>
+<li><code>Synth</code>（合成控制）</li>
+<li><code>synthdid</code>（Synthetic DID）</li>
+</ul>
+</section>
+<section id="python" class="level3">
+<h3 class="anchored" data-anchor-id="python">Python</h3>
+<ul>
+<li><code>pandas</code>, <code>numpy</code>, <code>statsmodels</code></li>
+<li><code>linearmodels</code>（面板数据）</li>
+<li>可手动实现匹配与现代 DID 估计量</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="学术诚信" class="level2">
+<h2 class="anchored" data-anchor-id="学术诚信">学术诚信</h2>
+<ul>
+<li>可以与同学讨论思路，但代码、推导和报告必须独立完成</li>
+<li>引用他人代码或方法时明确标注来源</li>
+<li>AI 辅助需如实披露（见上文）</li>
+<li>严禁抄袭</li>
+</ul>
+<hr>
+</section>
+<section id="参考文献" class="level2">
+<h2 class="anchored" data-anchor-id="参考文献">参考文献</h2>
+<p><strong>核心方法论文献：</strong></p>
+<ul>
+<li>Goodman-Bacon, A. (2021). Difference-in-differences with variation in treatment timing. <em>Journal of Econometrics</em>, 225(2), 254-277.</li>
+<li>Callaway, B., &amp; Sant’Anna, P. H. (2021). Difference-in-differences with multiple time periods. <em>Journal of Econometrics</em>, 225(2), 200-230.</li>
+<li>Sun, L., &amp; Abraham, S. (2021). Estimating dynamic treatment effects in event studies with heterogeneous treatment effects. <em>Journal of Econometrics</em>, 225(2), 175-199.</li>
+<li>Borusyak, K., Jaravel, X., &amp; Spiess, J. (2024). Revisiting event study designs: Robust and efficient estimation. <em>Review of Economic Studies</em>, 91(6), 3253-3285.</li>
+<li>Abadie, A., Diamond, A., &amp; Hainmueller, J. (2010). Synthetic control methods for comparative case studies. <em>Journal of the American Statistical Association</em>, 105(490), 493-505.</li>
+<li>Arkhangelsky, D., Athey, S., Hirshberg, D. A., Imbens, G. W., &amp; Wager, S. (2021). Synthetic difference-in-differences. <em>American Economic Review</em>, 111(12), 4088-4118.</li>
+</ul>
+<p><strong>综述与教材：</strong></p>
+<ul>
+<li>Cunningham, S. (2021). <em>Causal Inference: The Mixtape</em>. Ch. 9 (Difference-in-Differences).</li>
+<li>Roth, J., Sant’Anna, P. H., Bilinski, A., &amp; Poe, J. (2023). What’s trending in difference-in-differences? A synthesis of the recent econometrics literature. <em>Journal of Econometrics</em>.</li>
+</ul>
+<hr>
+<p><strong>祝研究愉快！如有问题，请在课程讨论区或答疑时间交流。</strong></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "已复制");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "已复制");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/zhiyuanryanchen\.github\.io\/empirical-methods");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

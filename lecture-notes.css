@@ -1,0 +1,366 @@
+:root {
+  --ruc-red: #003153;        /* Prussian Blue — primary */
+  --ruc-red-dark: #001f36;   /* darker Prussian for hover/emphasis */
+  --ruc-gold: #00A8CC;       /* Cyan Blue — accent */
+  --surface: #fbfbfc;
+  --surface-alt: #f3f5f7;
+  --text: #1f2933;
+  --muted: #52606d;
+  --border: #d9e2ec;
+  --code-bg: #f6f8fa;
+}
+
+body {
+  color: var(--text);
+  background: #ffffff;
+  line-height: 1.78;
+}
+
+.navbar {
+  border-bottom: 1px solid rgba(0, 49, 83, 0.08);
+  backdrop-filter: saturate(130%) blur(8px);
+}
+
+.quarto-title-block .title,
+h1,
+h2,
+h3,
+h4 {
+  color: var(--ruc-red);
+  letter-spacing: 0.01em;
+}
+
+.quarto-title-block .subtitle,
+.quarto-title-meta,
+.quarto-title-meta-heading,
+.quarto-title-meta-contents {
+  color: var(--muted);
+}
+
+#quarto-content main.content {
+  max-width: 980px;
+}
+
+.page-layout-full #quarto-content main.content {
+  max-width: 1100px;
+}
+
+p,
+li {
+  font-size: 1.03rem;
+}
+
+a {
+  color: var(--ruc-red);
+}
+
+a:hover {
+  color: var(--ruc-red-dark);
+}
+
+blockquote {
+  border-left: 4px solid var(--ruc-gold);
+  background: var(--surface);
+  color: var(--muted);
+  padding: 0.9rem 1rem;
+}
+
+code,
+pre,
+.sourceCode {
+  font-family: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+pre,
+div.sourceCode {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+pre code {
+  font-size: 0.92rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2rem 0;
+  font-size: 0.98rem;
+}
+
+thead th {
+  background: var(--ruc-red);
+  color: #fff;
+  border: 1px solid var(--ruc-red);
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 0.7rem 0.8rem;
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--surface);
+}
+
+.callout {
+  border-radius: 12px;
+  border-width: 1px;
+}
+
+.callout.callout-note,
+.callout.callout-important {
+  background: #fff8ec;
+  border-color: #f4d58d;
+}
+
+.callout.callout-warning {
+  background: #fff4f4;
+  border-color: #e9b4b4;
+}
+
+.callout.callout-tip {
+  background: #f2f7ff;
+  border-color: #bdd5ff;
+}
+
+.callout .callout-title {
+  color: var(--ruc-red);
+  font-weight: 700;
+}
+
+.figure,
+figure {
+  margin: 1.5rem auto;
+}
+
+.figure-caption,
+figcaption {
+  color: var(--muted);
+  font-size: 0.94rem;
+  text-align: center;
+}
+
+.toc-actions,
+#TOC {
+  font-size: 0.95rem;
+}
+
+#TOC a {
+  text-decoration: none;
+}
+
+#TOC a:hover {
+  text-decoration: underline;
+}
+
+.home-hero {
+  background:
+    radial-gradient(circle at top right, rgba(0, 168, 204, 0.14), transparent 28rem),
+    linear-gradient(135deg, rgba(0, 49, 83, 0.06), rgba(0, 49, 83, 0.015));
+  border: 1px solid rgba(0, 49, 83, 0.08);
+  border-radius: 22px;
+  padding: 1.6rem 1.5rem;
+  margin: 0.4rem 0 2rem;
+}
+
+.home-kicker {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+}
+
+a.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.72rem 1.1rem;
+  border-radius: 999px;
+  background: var(--ruc-red);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 14px 30px rgba(0, 49, 83, 0.12);
+}
+
+a.hero-button:hover {
+  color: #fff;
+  background: var(--ruc-red-dark);
+}
+
+a.hero-button-secondary {
+  background: #ffffff;
+  color: var(--ruc-red);
+  border: 1px solid rgba(0, 49, 83, 0.16);
+  box-shadow: none;
+}
+
+a.hero-button-secondary:hover {
+  color: var(--ruc-red-dark);
+  background: var(--surface);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 1.6rem;
+}
+
+.course-card,
+.update-card,
+.status-panel,
+.info-panel,
+.checklist-panel {
+  background: #ffffff;
+  border: 1px solid rgba(0, 49, 83, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
+}
+
+.course-card,
+.update-card,
+.status-panel,
+.checklist-panel {
+  padding: 1.15rem 1.15rem 1rem;
+}
+
+.course-card > :first-child,
+.update-card > :first-child,
+.status-panel > :first-child,
+.checklist-panel > :first-child {
+  margin-top: 0;
+}
+
+.course-card h3,
+.update-card h3,
+.status-panel h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.16rem;
+}
+
+.course-card p:last-child,
+.update-card p:last-child,
+.status-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.course-card a {
+  font-weight: 600;
+  text-decoration-thickness: 0.08em;
+}
+
+.pillar-grid .course-card {
+  background: linear-gradient(180deg, #ffffff, rgba(243, 245, 247, 0.72));
+}
+
+.update-list {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0 1.6rem;
+}
+
+.status-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 0.14rem 0.62rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.badge-new {
+  background: rgba(16, 185, 129, 0.12);
+  color: #0f766e;
+}
+
+.badge-updated {
+  background: rgba(0, 168, 204, 0.12);
+  color: #0c6b87;
+}
+
+.badge-soon {
+  background: rgba(245, 158, 11, 0.14);
+  color: #9a6700;
+}
+
+.action-card {
+  border-top: 4px solid rgba(0, 168, 204, 0.7);
+}
+
+.status-panel {
+  background: linear-gradient(135deg, rgba(0, 49, 83, 0.03), rgba(0, 168, 204, 0.08));
+}
+
+.update-card {
+  background: linear-gradient(180deg, #ffffff, rgba(251, 251, 252, 0.9));
+}
+
+.checklist-panel ol {
+  margin-bottom: 0;
+  padding-left: 1.3rem;
+}
+
+.info-panel {
+  padding: 0.2rem 1rem;
+  background: linear-gradient(180deg, rgba(243, 245, 247, 0.65), #ffffff);
+}
+
+.info-panel table {
+  margin: 0.4rem 0;
+}
+
+.info-panel th {
+  width: 22%;
+}
+
+.callout-important .callout-title::before {
+  content: "";
+}
+
+@media (max-width: 991.98px) {
+  #quarto-content main.content,
+  .page-layout-full #quarto-content main.content {
+    max-width: 100%;
+  }
+
+  .home-hero {
+    padding: 1.2rem 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  a.hero-button,
+  a.hero-button-secondary {
+    width: 100%;
+  }
+}
