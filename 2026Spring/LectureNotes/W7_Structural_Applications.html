@@ -448,7 +448,7 @@ s_0 = \frac{1}{1+\sum_{k=1}^{J}e^{\delta_k}}
 </div>
 <div class="callout-content">
 <p><strong>美妙的性质</strong></p>
-<p>取对数比后，Logit 模型变成__线性方程__！左边是数据（从市场份额计算），右边是参数。</p>
+<p>取对数比后，Logit 模型变成<strong>线性方程</strong>！左边是数据（从市场份额计算），右边是参数。</p>
 <p>在 Stata 中可直接用 <code>logit</code> 命令估计（假设价格外生）。</p>
 </div>
 </div>
@@ -693,7 +693,11 @@ dF(v_i)
 <span id="cb4-6"><a></a>    <span class="va">g</span> <span class="op">=</span> <span class="op">-</span><span class="fl">2</span> _ (<span class="va">Jac</span><span class="op">'</span> _ <span class="va">Z</span>) _ <span class="va">W</span> _ (<span class="va">resid</span><span class="op">'</span> <span class="op">*</span> <span class="va">Z</span>)<span class="op">';</span>        <span class="co">% 解析梯度</span></span>
 <span id="cb4-7"><a></a><span class="kw">end</span></span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
-<p><strong>两步 GMM</strong>： 1. 第一阶段：<span class="math inline">W_1 = (Z'Z)^{-1}</span>，得到一致但不有效的初值 2. 第二阶段：<span class="math inline">\hat{W}_{opt} = (Z'\hat{\xi}\hat{\xi}'Z)^{-1}</span>，得到有效估计</p>
+<p><strong>两步 GMM</strong>：</p>
+<ol type="1">
+<li><p>第一阶段：<span class="math inline">W_1 = (Z'Z)^{-1}</span>，得到一致但不有效的初值</p></li>
+<li><p>第二阶段：<span class="math inline">\hat{W}_{opt} = (Z'\hat{\xi}\hat{\xi}'Z)^{-1}</span>，得到有效估计</p></li>
+</ol>
 </div>
 </section>
 <section id="blp-主程序骨架matlab" class="slide level2">
@@ -855,7 +859,7 @@ p + \Delta(p)^{-1}\mathbf{s}(p)
 <section id="一个极简反事实代码骨架" class="slide level2">
 <h2>一个极简反事实代码骨架</h2>
 <div style="font-size: 1em;">
-<div id="cca8d7b7" class="cell">
+<div id="3c196335" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> demand_shares(price, theta):</span>
 <span id="cb6-2"><a></a>    delta <span class="op">=</span> theta[<span class="st">"beta"</span>] _ x <span class="op">-</span> theta[<span class="st">"alpha"</span>] _ price <span class="op">+</span> xi</span>
 <span id="cb6-3"><a></a>    exp_delta <span class="op">=</span> np.exp(delta)</span>
@@ -1034,7 +1038,7 @@ x_{ij}^{new}
 <section id="copilot-大语言模型提示模板" class="slide level2">
 <h2>Copilot / 大语言模型提示模板</h2>
 <div style="font-size: 1em;">
-<div id="46de8508" class="cell">
+<div id="a2532883" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># 提示示例：</span></span>
 <span id="cb7-2"><a></a><span class="co"># 写一个 Python 函数，计算逻辑选择模型的市场份额和解析价格导数。</span></span>
 <span id="cb7-3"><a></a><span class="co"># 使用向量化 NumPy，加入维度检查，并同时返回份额和导数矩阵。</span></span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>

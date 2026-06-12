@@ -67,7 +67,7 @@
     "href": "2026Spring/LectureNotes/W7_Structural_Applications.html#logit-模型的线性化取对数比",
     "title": "经济与商务实证研究方法",
     "section": "Logit 模型的线性化：取对数比",
-    "text": "Logit 模型的线性化：取对数比\n取 \\ln(s_j) - \\ln(s_0)，消去分母：\n\n\\ln(s_j) - \\ln(s_0) = \\delta_j = x_j\\beta - \\alpha p_j + \\xi_j\n\n\n\n\n\n\n\n\n提示\n\n\n美妙的性质\n取对数比后，Logit 模型变成__线性方程__！左边是数据（从市场份额计算），右边是参数。\n在 Stata 中可直接用 logit 命令估计（假设价格外生）。"
+    "text": "Logit 模型的线性化：取对数比\n取 \\ln(s_j) - \\ln(s_0)，消去分母：\n\n\\ln(s_j) - \\ln(s_0) = \\delta_j = x_j\\beta - \\alpha p_j + \\xi_j\n\n\n\n\n\n\n\n\n提示\n\n\n美妙的性质\n取对数比后，Logit 模型变成线性方程！左边是数据（从市场份额计算），右边是参数。\n在 Stata 中可直接用 logit 命令估计（假设价格外生）。"
   },
   {
     "objectID": "2026Spring/LectureNotes/W7_Structural_Applications.html#logit-模型中的内生性处理",
@@ -151,7 +151,7 @@
     "href": "2026Spring/LectureNotes/W7_Structural_Applications.html#step-3gmm-目标函数与优化",
     "title": "经济与商务实证研究方法",
     "section": "Step 3：GMM 目标函数与优化",
-    "text": "Step 3：GMM 目标函数与优化\nfunction [fval, g] = evalSingle(theta)\n    p = get_params(theta, draws);\n    [delta, Jac] = solveAllShares(dtable, draws, p, 'fixed-point');\n    [beta, resid] = ivregression(delta, X, Z, W);\n    fval = (resid' _ Z) _ W _ (resid' _ Z)';       % GMM 目标值\n    g = -2 _ (Jac' _ Z) _ W _ (resid' * Z)';        % 解析梯度\nend\n\n两步 GMM： 1. 第一阶段：W_1 = (Z'Z)^{-1}，得到一致但不有效的初值 2. 第二阶段：\\hat{W}_{opt} = (Z'\\hat{\\xi}\\hat{\\xi}'Z)^{-1}，得到有效估计"
+    "text": "Step 3：GMM 目标函数与优化\nfunction [fval, g] = evalSingle(theta)\n    p = get_params(theta, draws);\n    [delta, Jac] = solveAllShares(dtable, draws, p, 'fixed-point');\n    [beta, resid] = ivregression(delta, X, Z, W);\n    fval = (resid' _ Z) _ W _ (resid' _ Z)';       % GMM 目标值\n    g = -2 _ (Jac' _ Z) _ W _ (resid' * Z)';        % 解析梯度\nend\n\n两步 GMM：\n\n第一阶段：W_1 = (Z'Z)^{-1}，得到一致但不有效的初值\n第二阶段：\\hat{W}_{opt} = (Z'\\hat{\\xi}\\hat{\\xi}'Z)^{-1}，得到有效估计"
   },
   {
     "objectID": "2026Spring/LectureNotes/W7_Structural_Applications.html#blp-主程序骨架matlab",
