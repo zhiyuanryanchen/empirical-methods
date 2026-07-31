@@ -1,0 +1,21 @@
+flowchart TD
+    U["研究者\n自然语言指令"] --> AI["AI 助手\nClaude Code / Copilot"]
+    AI --> MCP["MCP 协议层\n标准化工具调用接口"]
+    MCP --> S1["Stata MCP Server\n回归、面板、IV"]
+    MCP --> S2["R MCP Server\nggplot、fixest、did"]
+    MCP --> S3["Julia MCP Server\n数值优化、模拟"]
+    MCP --> S4["Python 直接执行\nnumpy、pandas、sklearn"]
+    S1 --> R["结果返回\n表格 / 图表 / 日志"]
+    S2 --> R
+    S3 --> R
+    S4 --> R
+    R --> V["研究者审查\n接受 / 修改 / 拒绝"]
+    style U fill:#003153,color:#fff
+    style AI fill:#003153,color:#fff
+    style MCP fill:#00A8CC,color:#fff
+    style S1 fill:#f5f5f5,color:#333,stroke:#003153
+    style S2 fill:#f5f5f5,color:#333,stroke:#003153
+    style S3 fill:#f5f5f5,color:#333,stroke:#003153
+    style S4 fill:#f5f5f5,color:#333,stroke:#003153
+    style R fill:#e6f0ff,color:#333,stroke:#003153
+    style V fill:#003153,color:#fff

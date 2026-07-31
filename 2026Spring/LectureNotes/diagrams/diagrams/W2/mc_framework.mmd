@@ -1,0 +1,13 @@
+flowchart TD
+    A["1. 设定 DGP — 数据生成过程"] --> B["2. 生成一组样本（n 个观测）"]
+    B --> C["3. 计算估计量 θ̂"]
+    C --> D{"已重复 R 次？"}
+    D -->|"否，继续"| B
+    D -->|"是"| E["4. 汇总 R 个 θ̂ 的均值、标准差、分布"]
+    E --> F["5. 与真实参数 θ 比较：无偏？一致？"]
+    style A fill:#003153,color:#fff
+    style B fill:#00A8CC,color:#fff
+    style C fill:#00A8CC,color:#fff
+    style D fill:#f5f5f5,color:#333,stroke:#003153
+    style E fill:#003153,color:#fff
+    style F fill:#003153,color:#fff

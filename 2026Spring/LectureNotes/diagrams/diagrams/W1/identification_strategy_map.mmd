@@ -1,0 +1,14 @@
+flowchart TD
+    Q["你的研究问题\n是什么类型？"] --> C["因果问题"]
+    Q --> R["反事实问题"]
+    C --> D["有政策变化 ×\n分组结构？"]
+    C --> I["有外生随机性\n可作工具？"]
+    C --> RD["处理由阈值决定？"]
+    D --> DID["DID / 合成控制"]
+    I --> IV["IV / 2SLS"]
+    RD --> RDD["断点回归 (RD)"]
+    R --> S["结构估计\n（第 5-6 周）"]
+    style DID fill:#003153,color:#fff
+    style IV fill:#003153,color:#fff
+    style RDD fill:#003153,color:#fff
+    style S fill:#00A8CC,color:#fff

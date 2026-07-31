@@ -1,0 +1,26 @@
+flowchart LR
+    subgraph 行内补全
+    A["GitHub Copilot\n实时代码建议"]
+    end
+    subgraph 对话式工程
+    B["Claude Code\n计划→实现→验证"]
+    C["Codex CLI\n自然语言→代码"]
+    end
+    subgraph 协议层
+    D["MCP 协议\n连接 AI ↔ 工具"]
+    end
+    A --> D
+    B --> D
+    C --> D
+    D --> E["Python"]
+    D --> F["Stata"]
+    D --> G["R"]
+    D --> H["Julia"]
+    style A fill:#003153,color:#fff,stroke:#003153
+    style B fill:#003153,color:#fff,stroke:#003153
+    style C fill:#003153,color:#fff,stroke:#003153
+    style D fill:#00A8CC,color:#fff,stroke:#00A8CC
+    style E fill:#f5f5f5,color:#333,stroke:#003153
+    style F fill:#f5f5f5,color:#333,stroke:#003153
+    style G fill:#f5f5f5,color:#333,stroke:#003153
+    style H fill:#f5f5f5,color:#333,stroke:#003153

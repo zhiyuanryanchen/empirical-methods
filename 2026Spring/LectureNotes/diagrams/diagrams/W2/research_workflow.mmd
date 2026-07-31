@@ -1,0 +1,7 @@
+flowchart LR
+    B["构建 Build\n项目结构 · 数据管理\n代码组织 · README"] --> E["执行 Execute\n数据清洗 · 描述统计\n核心分析 · 出表出图"]
+    E --> R["迭代 Refine\n审稿反馈 · 修改规格\n重新运行 · 版本控制"]
+    R -.->|"新一轮"| E
+    style B fill:#003153,color:#fff
+    style E fill:#00A8CC,color:#fff
+    style R fill:#f5f5f5,color:#333,stroke:#003153
